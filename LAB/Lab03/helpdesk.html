@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="CWA Help Desk Appointment Form">
+    <meta name="keywords" content="Helpdesk, Appointment, CWA, Support, HTML Form">
+    <meta name="author" content="Your Name">
+    <title>CWA Help Desk Appointment</title>
+</head>
+<body>
+
+    <header>
+        <img src="lab03_image/logo.png" alt="Company Logo">
+        <h1>CWA Help Desk Appointment</h1>
+    </header>
+
+    <main>
+        <form action="http://mercury.swin.edu.au/itread/echo.php" method="post">
+            
+            <!-- User / Contact Details -->
+            <fieldset>
+                <legend>User Details</legend>
+                
+                <div>
+                    <label for="fname">First Name:</label>
+                    <input type="text" id="fname" name="fname" required="required" pattern="[A-Za-z]{1,25}" maxlength="25">
+                </div>
+                
+                <div>
+                    <label for="lname">Last Name:</label>
+                    <input type="text" id="lname" name="lname" required="required" pattern="[A-Za-z]{1,25}" maxlength="25">
+                </div>
+
+                <div>
+                    <label for="studentid">Student ID:</label>
+                    <input type="text" id="studentid" name="studentid" required="required" pattern="\d{7,10}" placeholder="7-10 digits">
+                </div>
+
+                <div>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required="required">
+                </div>
+            </fieldset>
+
+            <!-- Appointment Details -->
+            <fieldset>
+                <legend>Appointment Details</legend>
+
+                <div>
+                    <label for="date">Date:</label>
+                    <input type="text" id="date" name="date" required="required" pattern="\d{2}/\d{2}/\d{4}" placeholder="dd/mm/yyyy">
+                </div>
+
+                <div>
+                    <label for="time">Time:</label>
+                    <input type="text" id="time" name="time" required="required" pattern="([01]?[0-9]|2[0-3]):[0-5][0-9]" placeholder="hh:mm">
+                </div>
+
+                <div>
+                    <label for="category">Issue Category:</label>
+                    <select id="category" name="category" required="required">
+                        <option value="">Please Select</option>
+                        <option value="hardware">Hardware</option>
+                        <option value="software">Software</option>
+                        <option value="network">Network / Wi-Fi</option>
+                        <option value="account">Account / Access</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label for="description">Description of Issue:</label><br>
+                    <textarea id="description" name="description" rows="5" cols="40" placeholder="Please describe your issue in detail..."></textarea>
+                </div>
+            </fieldset>
+
+            <!-- Preferred Contact Method (Radio Group) -->
+            <fieldset>
+                <legend>Preferred Contact Method</legend>
+                
+                <input type="radio" id="contact_email" name="contact_method" value="email" checked="checked">
+                <label for="contact_email">Email</label>
+                
+                <input type="radio" id="contact_phone" name="contact_method" value="phone">
+                <label for="contact_phone">Phone</label>
+
+                <input type="radio" id="contact_teams" name="contact_method" value="teams">
+                <label for="contact_teams">MS Teams</label>
+            </fieldset>
+
+            <!-- Additional Services (Checkbox Group named as an array) -->
+            <fieldset>
+                <legend>Services Required</legend>
+
+                <input type="checkbox" id="svc_diagnosis" name="services[]" value="diagnosis" checked="checked">
+                <label for="svc_diagnosis">System Diagnosis</label><br>
+
+                <input type="checkbox" id="svc_software" name="services[]" value="software_install">
+                <label for="svc_software">Software Installation</label><br>
+
+                <input type="checkbox" id="svc_virus" name="services[]" value="virus_removal">
+                <label for="svc_virus">Virus / Malware Removal</label><br>
+
+                <input type="checkbox" id="svc_backup" name="services[]" value="data_backup">
+                <label for="svc_backup">Data Backup &amp; Recovery</label>
+            </fieldset>
+
+            <!-- Form Actions -->
+            <p>
+                <input type="submit" value="Book Appointment">
+                <input type="reset" value="Reset Form">
+            </p>
+
+        </form>
+    </main>
+
+</body>
+</html>
