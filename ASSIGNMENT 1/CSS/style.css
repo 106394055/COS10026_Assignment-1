@@ -530,13 +530,9 @@ dd {
    ========================================== */
 
 /* ==========================================================================
-     COS10026 Applied Web Project - CSS Stylesheet
-     Theme: VinFast Modern Recruitment Portal
-     ========================================================================== */
 
-/* ==========================================================================
-   1. TOKENS (:root) & BASE STYLES
-   ========================================================================== */
+TOKENS (:root) & BASE STYLES
+========================================================================== */
 :root {
   --color-primary: #0b5fff;
   --color-primary-dark: #0847c4;
@@ -604,7 +600,7 @@ main {
   border: 0;
 }
 
-/* Skip link */
+/* Skip link for accessibility */
 .skip-link {
   position: absolute;
   top: -100px;
@@ -623,8 +619,8 @@ main {
 }
 
 /* ==========================================================================
-   2. HEADER & NAVIGATION
-   ========================================================================== */
+2. HEADER & NAVIGATION
+========================================================================== */
 .site-header {
   background-color: transparent;
   color: var(--color-nav);
@@ -684,8 +680,8 @@ main {
 }
 
 /* ==========================================================================
-   3. HERO BANNER
-   ========================================================================== */
+3. HERO BANNER
+========================================================================== */
 .hero-banner {
   background: linear-gradient(135deg, #0a1f4d 0%, #0b5fff 100%);
   color: #ffffff;
@@ -693,9 +689,10 @@ main {
   margin-bottom: 24px;
 }
 
-.hero-content h1 {
+.hero-content h1.hero-title {
   font-size: 2.2rem;
   font-weight: 800;
+  text-transform: uppercase;
   margin-bottom: 12px;
 }
 
@@ -710,8 +707,8 @@ main {
 }
 
 /* ==========================================================================
-   4. APPLY PAGE - STEPPER & LAYOUT
-   ========================================================================== */
+4. APPLY PAGE - STEPPER & LAYOUT
+========================================================================== */
 .main-container {
   margin-top: 12px;
 }
@@ -733,7 +730,7 @@ main {
   gap: 8px;
 }
 
-.step-num {
+.step__num {
   width: 28px;
   height: 28px;
   border-radius: 50%;
@@ -746,18 +743,18 @@ main {
   font-size: 0.85rem;
 }
 
-.step.active .step-num {
+.step.step--active .step__num {
   background-color: var(--color-primary);
   color: #ffffff;
 }
 
-.step-label {
+.step__label {
   font-weight: 600;
   color: var(--color-muted);
   font-size: 0.85rem;
 }
 
-.step.active .step-label {
+.step.step--active .step__label {
   color: var(--color-primary);
 }
 
@@ -775,8 +772,8 @@ main {
 }
 
 /* ==========================================================================
-   5. FORM STYLES
-   ========================================================================== */
+5. FORM STYLES
+========================================================================== */
 .form-section {
   background-color: var(--color-surface);
   border: 1px solid var(--color-border);
@@ -796,7 +793,7 @@ main {
   margin-bottom: 20px;
 }
 
-.section-num {
+.section-header__num {
   background: var(--color-primary);
   color: #ffffff;
   font-weight: 700;
@@ -805,13 +802,13 @@ main {
   font-size: 0.85rem;
 }
 
-.section-title {
+.section-header__title {
   font-weight: 700;
   color: var(--color-navy);
   font-size: 1rem;
 }
 
-.section-desc {
+.section-header__desc {
   margin-left: auto;
   font-size: 0.75rem;
   color: var(--color-muted);
@@ -849,7 +846,9 @@ main {
   flex: 1 1 100%;
 }
 
-label {
+label,
+.gender-legend,
+.skills-legend {
   font-weight: 600;
   font-size: 0.85rem;
   color: var(--color-text);
@@ -862,6 +861,7 @@ label {
 input[type="text"],
 input[type="email"],
 input[type="tel"],
+input[type="file"],
 select,
 textarea {
   width: 100%;
@@ -886,7 +886,8 @@ textarea:focus {
   color: var(--color-muted);
 }
 
-.gender-fieldset {
+.gender-fieldset,
+.skills-fieldset {
   border: none;
   padding: 0;
   margin: 0;
@@ -906,95 +907,6 @@ textarea:focus {
   align-items: center;
   gap: 6px;
   font-size: 0.85rem;
-  cursor: pointer;
-}
-
-.upload-container {
-  display: flex;
-  gap: 16px;
-}
-
-.drop-zone {
-  flex: 1;
-  border: 2px dashed #93c5fd;
-  background-color: var(--color-block);
-  border-radius: 8px;
-  padding: 20px;
-  text-align: center;
-}
-
-.upload-icon {
-  font-size: 1.8rem;
-}
-
-.upload-text {
-  font-size: 0.85rem;
-}
-
-.link-text {
-  color: var(--color-primary);
-  text-decoration: underline;
-  cursor: pointer;
-}
-
-.upload-hint {
-  font-size: 0.7rem;
-  color: var(--color-muted);
-  margin-top: 6px;
-}
-
-.file-list {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.file-item {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  background: #ffffff;
-  padding: 8px 12px;
-  border: 1px solid var(--color-border);
-  border-radius: 6px;
-  font-size: 0.8rem;
-}
-
-.file-type-icon {
-  font-size: 0.65rem;
-  font-weight: 800;
-  padding: 2px 4px;
-  border-radius: 3px;
-  color: #ffffff;
-}
-
-.file-type-icon.pdf {
-  background: #ef4444;
-}
-
-.file-type-icon.doc {
-  background: #3b82f6;
-}
-
-.file-type-icon.img {
-  background: #10b981;
-}
-
-.file-name {
-  font-weight: 600;
-  flex: 1;
-}
-
-.file-size {
-  color: var(--color-muted);
-}
-
-.remove-file {
-  background: none;
-  border: none;
-  font-size: 1rem;
-  color: #94a3b8;
   cursor: pointer;
 }
 
@@ -1025,15 +937,19 @@ textarea:focus {
   background-color: var(--color-primary-dark);
 }
 
-.btn-secondary {
+.btn--secondary {
   background-color: #ffffff;
   color: var(--color-text);
   border-color: var(--color-border);
 }
 
+.btn--secondary:hover {
+  background-color: var(--color-block);
+}
+
 /* ==========================================================================
-   6. SIDEBAR CARDS & TIMELINE
-   ========================================================================== */
+6. SIDEBAR CARDS & TIMELINE
+========================================================================== */
 .sidebar-column {
   display: flex;
   flex-direction: column;
@@ -1047,47 +963,47 @@ textarea:focus {
   padding: 16px;
 }
 
-.card-header {
+.card__header {
   display: flex;
   align-items: center;
   gap: 8px;
   margin-bottom: 12px;
 }
 
-.card-header h3 {
+.card__header h3 {
   font-size: 0.95rem;
   font-weight: 700;
   color: var(--color-navy);
   margin: 0;
 }
 
-.card-tips {
+.card--tips {
   background-color: #fefce8;
   border-color: #fef08a;
 }
 
-.card-security {
+.card--security {
   background-color: #f0fdf4;
   border-color: #bbf7d0;
 }
 
-.card-help {
+.card--help {
   background-color: #eff6ff;
   border-color: #bfdbfe;
 }
 
-.card-tips ul {
+.card--tips ul {
   padding-left: 18px;
   font-size: 0.8rem;
   margin: 0;
 }
 
-.card-tips li {
+.card--tips li {
   margin-bottom: 6px;
 }
 
-.card-security p,
-.card-help p {
+.card--security p,
+.card--help p {
   font-size: 0.8rem;
   margin: 0;
 }
@@ -1124,7 +1040,7 @@ textarea:focus {
   margin-bottom: 16px;
 }
 
-.timeline-item.highlight {
+.timeline-item.timeline-item--highlight {
   background: #fff9e6;
   padding: 8px;
   border-radius: 8px;
@@ -1185,8 +1101,8 @@ textarea:focus {
 }
 
 /* ==========================================================================
-   7. FLOATING VF CHATBOT WIDGET (CODE NHÓM)
-   ========================================================================== */
+7. FLOATING VF CHATBOT WIDGET
+========================================================================== */
 .site-bot {
   position: fixed;
   right: 24px;
@@ -1279,8 +1195,8 @@ textarea:focus {
 }
 
 /* ==========================================================================
-   8. FOOTER
-   ========================================================================== */
+8. FOOTER
+========================================================================== */
 .site-footer {
   flex-shrink: 0;
   margin-top: auto;
@@ -1365,8 +1281,8 @@ textarea:focus {
 }
 
 /* ==========================================================================
-   9. MEDIA QUERIES (MOBILE RESPONSIVE)
-   ========================================================================== */
+9. MEDIA QUERIES (MOBILE RESPONSIVE)
+========================================================================== */
 @media (max-width: 900px) {
   .content-grid {
     grid-template-columns: 1fr;
@@ -1374,10 +1290,6 @@ textarea:focus {
 
   .stepper-bar {
     overflow-x: auto;
-  }
-
-  .upload-container {
-    flex-direction: column;
   }
 
   .site-footer__inner {

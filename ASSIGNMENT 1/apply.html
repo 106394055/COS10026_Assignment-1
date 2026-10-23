@@ -8,9 +8,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
-    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="css/style.css">
 
-    <!-- Embedded CSS Example as required by rubric/spec -->
+    <!-- Single Embedded CSS Example (Required by Assessment Spec) -->
     <style>
         .embedded-style-notice {
             display: none;
@@ -47,8 +47,8 @@
         <!-- Hero Banner -->
         <section class="hero-banner">
             <div class="container hero-content">
-                <h1 style="text-transform: uppercase;">Join VinFast<br>Drive Your <span
-                        class="highlight-blue">Career</span> Forward</h1>
+                <h1 class="hero-title">Join VinFast<br>Drive Your <span class="highlight-blue">Career</span> Forward
+                </h1>
                 <p>Be part of a global movement towards a greener and smarter future.<br>Submit your application and
                     let's shape what's next, together.</p>
             </div>
@@ -59,24 +59,24 @@
 
             <!-- Stepper Progress Bar -->
             <div class="stepper-bar">
-                <div class="step active">
-                    <span class="step-num">1</span>
-                    <span class="step-label">Personal Details</span>
+                <div class="step step--active">
+                    <span class="step__num">1</span>
+                    <span class="step__label">Personal Details</span>
                 </div>
                 <div class="step-line"></div>
                 <div class="step">
-                    <span class="step-num">2</span>
-                    <span class="step-label">Contact Details</span>
+                    <span class="step__num">2</span>
+                    <span class="step__label">Contact Details</span>
                 </div>
                 <div class="step-line"></div>
                 <div class="step">
-                    <span class="step-num">3</span>
-                    <span class="step-label">Skills &amp; Experience</span>
+                    <span class="step__num">3</span>
+                    <span class="step__label">Skills &amp; Experience</span>
                 </div>
                 <div class="step-line"></div>
                 <div class="step">
-                    <span class="step-num">4</span>
-                    <span class="step-label">Upload &amp; Submit</span>
+                    <span class="step__num">4</span>
+                    <span class="step__label">Upload &amp; Submit</span>
                 </div>
             </div>
 
@@ -90,10 +90,10 @@
                         <!-- Section 1: Personal Details -->
                         <fieldset class="form-section">
                             <legend class="section-header">
-                                <span class="section-num">1</span>
-                                <span class="section-title">Position and Personal Details</span>
-                                <span class="section-desc">Let us know who you are and the position you're applying
-                                    for.</span>
+                                <span class="section-header__num">1</span>
+                                <span class="section-header__title">Position and Personal Details</span>
+                                <span class="section-header__desc">Let us know who you are and the position you're
+                                    applying for.</span>
                             </legend>
 
                             <div class="form-row">
@@ -128,22 +128,23 @@
                                 </div>
 
                                 <div class="form-group col-23">
-                                    <label>Gender <span class="required">*</span></label>
                                     <fieldset class="gender-fieldset">
-                                        <legend class="sr-only">Select Gender</legend>
+                                        <legend class="gender-legend">Gender <span class="required">*</span></legend>
                                         <div class="radio-group">
-                                            <label class="radio-item">
-                                                <input type="radio" name="gender" value="female" required> Female
+                                            <label class="radio-item" for="gender-female">
+                                                <input type="radio" id="gender-female" name="gender" value="female"
+                                                    required> Female
                                             </label>
-                                            <label class="radio-item">
-                                                <input type="radio" name="gender" value="male"> Male
+                                            <label class="radio-item" for="gender-male">
+                                                <input type="radio" id="gender-male" name="gender" value="male"> Male
                                             </label>
-                                            <label class="radio-item">
-                                                <input type="radio" name="gender" value="non-binary"> Non-binary
+                                            <label class="radio-item" for="gender-nonbinary">
+                                                <input type="radio" id="gender-nonbinary" name="gender"
+                                                    value="non-binary"> Non-binary
                                             </label>
-                                            <label class="radio-item">
-                                                <input type="radio" name="gender" value="prefer-not-to-say"> Prefer not
-                                                to say
+                                            <label class="radio-item" for="gender-notstated">
+                                                <input type="radio" id="gender-notstated" name="gender"
+                                                    value="prefer-not-to-say"> Prefer not to say
                                             </label>
                                         </div>
                                     </fieldset>
@@ -154,9 +155,9 @@
                         <!-- Section 2: Contact Details -->
                         <fieldset class="form-section">
                             <legend class="section-header">
-                                <span class="section-num">2</span>
-                                <span class="section-title">Contact Details</span>
-                                <span class="section-desc">Provide your current contact information.</span>
+                                <span class="section-header__num">2</span>
+                                <span class="section-header__title">Contact Details</span>
+                                <span class="section-header__desc">Provide your current contact information.</span>
                             </legend>
 
                             <div class="form-row">
@@ -202,8 +203,8 @@
                                 <div class="form-group col-13">
                                     <label for="phone">Phone Number <span class="required">*</span></label>
                                     <input type="tel" id="phone" name="phone" placeholder="e.g. 0412345678"
-                                        pattern="\d{8,12}" maxlength="12" required>
-                                    <span class="field-hint">8–12 digits (numbers only)</span>
+                                        pattern="[\d\s\-]{8,12}" maxlength="12" required>
+                                    <span class="field-hint">8–12 digits</span>
                                 </div>
                             </div>
 
@@ -219,31 +220,50 @@
                         <!-- Section 3: Skills and Experience -->
                         <fieldset class="form-section">
                             <legend class="section-header">
-                                <span class="section-num">3</span>
-                                <span class="section-title">Skills and Experience</span>
-                                <span class="section-desc">Select the skills that best match your experience.</span>
+                                <span class="section-header__num">3</span>
+                                <span class="section-header__title">Skills and Experience</span>
+                                <span class="section-header__desc">Select the skills that best match your
+                                    experience.</span>
                             </legend>
 
                             <div class="form-group col-full">
-                                <label>Skill List <span class="required">*</span></label>
-                                <div class="checkbox-grid">
-                                    <label class="checkbox-item"><input type="checkbox" name="skills[]"
-                                            value="HTML/CSS"> HTML / CSS</label>
-                                    <label class="checkbox-item"><input type="checkbox" name="skills[]"
-                                            value="UI/UX Design"> UI/UX Design</label>
-                                    <label class="checkbox-item"><input type="checkbox" name="skills[]"
-                                            value="Data Analysis"> Data Analysis</label>
-                                    <label class="checkbox-item"><input type="checkbox" name="skills[]"
-                                            value="Project Management"> Project Management</label>
-                                    <label class="checkbox-item"><input type="checkbox" name="skills[]"
-                                            value="Digital Marketing"> Digital Marketing</label>
-                                    <label class="checkbox-item"><input type="checkbox" name="skills[]"
-                                            value="Customer Service"> Customer Service</label>
-                                    <label class="checkbox-item"><input type="checkbox" name="skills[]"
-                                            value="E-commerce"> E-commerce</label>
-                                    <label class="checkbox-item"><input type="checkbox" name="skills[]" value="Other">
-                                        Other (please specify)</label>
-                                </div>
+                                <fieldset class="skills-fieldset">
+                                    <legend class="skills-legend">Skill List <span class="required">*</span></legend>
+                                    <div class="checkbox-grid">
+                                        <label class="checkbox-item" for="skill-html">
+                                            <input type="checkbox" id="skill-html" name="skills[]" value="HTML/CSS">
+                                            HTML / CSS
+                                        </label>
+                                        <label class="checkbox-item" for="skill-uiux">
+                                            <input type="checkbox" id="skill-uiux" name="skills[]" value="UI/UX Design">
+                                            UI/UX Design
+                                        </label>
+                                        <label class="checkbox-item" for="skill-data">
+                                            <input type="checkbox" id="skill-data" name="skills[]"
+                                                value="Data Analysis"> Data Analysis
+                                        </label>
+                                        <label class="checkbox-item" for="skill-pm">
+                                            <input type="checkbox" id="skill-pm" name="skills[]"
+                                                value="Project Management"> Project Management
+                                        </label>
+                                        <label class="checkbox-item" for="skill-marketing">
+                                            <input type="checkbox" id="skill-marketing" name="skills[]"
+                                                value="Digital Marketing"> Digital Marketing
+                                        </label>
+                                        <label class="checkbox-item" for="skill-cs">
+                                            <input type="checkbox" id="skill-cs" name="skills[]"
+                                                value="Customer Service"> Customer Service
+                                        </label>
+                                        <label class="checkbox-item" for="skill-ecommerce">
+                                            <input type="checkbox" id="skill-ecommerce" name="skills[]"
+                                                value="E-commerce"> E-commerce
+                                        </label>
+                                        <label class="checkbox-item" for="skill-other">
+                                            <input type="checkbox" id="skill-other" name="skills[]" value="Other"> Other
+                                            (please specify)
+                                        </label>
+                                    </div>
+                                </fieldset>
                             </div>
 
                             <div class="form-group col-full">
@@ -258,56 +278,27 @@
                         <!-- Section 4: Document Upload -->
                         <fieldset class="form-section">
                             <legend class="section-header">
-                                <span class="section-num">4</span>
-                                <span class="section-title">Upload Supporting Documents</span>
-                                <span class="section-desc">You can upload any relevant documents such as your CV, cover
-                                    letter, portfolio or certificates.</span>
+                                <span class="section-header__num">4</span>
+                                <span class="section-header__title">Upload Supporting Documents</span>
+                                <span class="section-header__desc">You can upload any relevant documents such as your
+                                    CV, cover letter, portfolio or certificates.</span>
                             </legend>
 
-                            <div class="upload-container">
-                                <div class="drop-zone">
-                                    <div class="upload-icon">☁️</div>
-                                    <div class="upload-text">
-                                        <strong>Drag and drop files here</strong><br>
-                                        or <span class="link-text">click to browse</span>
-                                    </div>
-                                    <p class="upload-hint">Accepted file types: PDF, DOC, DOCX, JPG, PNG | Maximum file
-                                        size: 5 MB per file</p>
-                                </div>
-
-                                <div class="file-list">
-                                    <div class="file-item">
-                                        <span class="file-type-icon pdf">PDF</span>
-                                        <span class="file-name">My_CV.pdf</span>
-                                        <span class="file-size">1.2 MB</span>
-                                        <button type="button" class="remove-file"
-                                            aria-label="Remove file">&times;</button>
-                                    </div>
-                                    <div class="file-item">
-                                        <span class="file-type-icon doc">DOC</span>
-                                        <span class="file-name">Cover_Letter.docx</span>
-                                        <span class="file-size">850 KB</span>
-                                        <button type="button" class="remove-file"
-                                            aria-label="Remove file">&times;</button>
-                                    </div>
-                                    <div class="file-item">
-                                        <span class="file-type-icon img">IMG</span>
-                                        <span class="file-name">Portfolio.jpg</span>
-                                        <span class="file-size">3.4 MB</span>
-                                        <button type="button" class="remove-file"
-                                            aria-label="Remove file">&times;</button>
-                                    </div>
-                                </div>
+                            <div class="form-group col-full">
+                                <label for="documentUpload">Select Document (Optional)</label>
+                                <input type="file" id="documentUpload" name="documentUpload"
+                                    accept=".pdf,.doc,.docx,.jpg,.png">
+                                <span class="field-hint">Accepted file types: PDF, DOC, DOCX, JPG, PNG (Max 5MB)</span>
                             </div>
                         </fieldset>
 
                         <!-- Actions -->
                         <div class="form-actions">
-                            <button type="reset" class="btn btn-secondary">
-                                <span class="btn-icon">🔄</span> Reset Form
+                            <button type="reset" class="btn btn--secondary">
+                                <span class="btn__icon">🔄</span> Reset Form
                             </button>
                             <button type="submit" class="btn btn--primary">
-                                <span class="btn-icon">✈️</span> Submit Application
+                                <span class="btn__icon">✈️</span> Submit Application
                             </button>
                         </div>
 
@@ -316,9 +307,9 @@
 
                 <!-- Right Column: Sidebar -->
                 <aside class="sidebar-column">
-                    <div class="card card-tips">
-                        <div class="card-header">
-                            <span class="card-icon text-yellow">💡</span>
+                    <div class="card card--tips">
+                        <div class="card__header">
+                            <span class="card__icon text-yellow">💡</span>
                             <h3>Application Tips</h3>
                         </div>
                         <ul>
@@ -330,9 +321,9 @@
                         </ul>
                     </div>
 
-                    <div class="card card-security">
-                        <div class="card-header">
-                            <span class="card-icon text-green">🛡️</span>
+                    <div class="card card--security">
+                        <div class="card__header">
+                            <span class="card__icon text-green">🛡️</span>
                             <h3>Your Information is Secure</h3>
                         </div>
                         <p>Your personal information will only be used for recruitment purposes in accordance with our
@@ -340,9 +331,9 @@
                         </p>
                     </div>
 
-                    <div class="card card-help">
-                        <div class="card-header">
-                            <span class="card-icon text-blue">🎧</span>
+                    <div class="card card--help">
+                        <div class="card__header">
+                            <span class="card__icon text-blue">🎧</span>
                             <h3>Need Help?</h3>
                         </div>
                         <p>If you have any questions about the application process, please contact our recruitment team.
@@ -350,9 +341,9 @@
                         <a href="mailto:careers@vinfast.com" class="email-link">✉️ careers@vinfast.com</a>
                     </div>
 
-                    <div class="card card-timeline">
-                        <div class="card-header">
-                            <span class="card-icon text-blue">📅</span>
+                    <div class="card card--timeline">
+                        <div class="card__header">
+                            <span class="card__icon text-blue">📅</span>
                             <h3>Application Timeline</h3>
                         </div>
 
@@ -373,7 +364,7 @@
                                     <p>You can no longer apply after this day.</p>
                                 </div>
                             </li>
-                            <li class="timeline-item highlight">
+                            <li class="timeline-item timeline-item--highlight">
                                 <div class="timeline-badge bg-orange">⏳</div>
                                 <div class="timeline-content">
                                     <span class="date">October 20, 2026</span>
@@ -413,9 +404,9 @@
         </div>
     </main>
 
-    <!-- Floating VF Chatbot Widget (Tích hợp theo thiết kế nhóm) -->
+    <!-- Floating VF Chatbot Widget -->
     <div class="site-bot">
-        <details class="site-bot__Widget">
+        <details class="site-bot__widget">
             <summary class="site-bot__trigger">
                 <img src="images/Home/Vinfast_chatbot.png" alt="" width="36" height="36">
                 <span class="site-bot__badge">Ask VF Bot</span>
