@@ -9,166 +9,204 @@
   <link rel="stylesheet" href="CSS/style.css">
 </head>
 <body>
-  
-  <!-- Main Site Header -->
+
+  <!-- Header -->
+  <a class="skip-link" href="#main">Skip to main content</a>
   <header class="site-header">
-    <a class="brand" href="index.html" aria-label="VinFast Home">
-      <img class="brand-logo" src="images/Home/Vinfast_logo.png" alt="VinFast Logo">
-    </a>
-
-    <nav class="main-navigation" aria-label="Main Navigation">
-      <a class="active" href="index.html" aria-current="page">Home</a>
-      <a href="Jobs.html">Jobs</a>
-      <a href="Apply.html">Apply</a>
-      <a href="About.html">About</a>
-    </nav>
-
-    <a class="chatbot-link" href="chatbot.html" aria-label="Chat with VinFast Assistant">
-      <img src="images/Home/Vinfast_chatbot.png" alt="VinFast Chatbot Icon">
-    </a>
+    <div class="container site-header__inner">
+      <a class="site-brand" href="index.html">
+        <img src="images/Home/Vinfast_logo.png" alt="" width="83" height="66">
+        <span class="site-brand__wordmark">VinFast</span>
+      </a>
+      <nav class="site-nav" aria-label="Main">
+        <ul>
+          <li><a href="index.html" aria-current="page">Home</a></li>
+          <li><a href="jobs.html">Jobs</a></li>
+          <li><a href="apply.html">Apply</a></li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
-  <main class="page-content">
-    <!-- Hero Banner Section -->
-    <section class="hero" id="home" aria-label="VinFast Careers Hero">
-      <header class="hero-header">
-        <h1>
-          <span class="hero-title-accent">Join VinFast</span>
-          <span class="hero-title-main">Drive Your Career Forward</span>
-        </h1>
-      </header>
+  <!-- Bot -->
+  <div class="site-bot">
+    <details class="site-bot__Widget">
+      <summary class="site-bot__trigger">
+        <img src="images/Home/Vinfast_chatbot.png" alt="" width="48" height="48">
+        <span class="site-bot__badge">Ask VF Bot</span>
+      </summary>
+      <div class="site-bot__panel">
+        <p class="site-bot__title">VinFast Career Assistant</p>
+        <p class="site-bot__text">Need help applying? Quote a 5-character reference (VF001–VF004) on the Apply page before <time datetime="2026-10-30">30 October 2026</time>.</p>
+        <ul class="site-bot__links">
+          <li><a href="jobs.html">Browse open roles</a></li>
+          <li><a href="apply.html">Go to application form</a></li>
+          <li><a href="mailto:info@vinfast-digital-retail.example">Email recruitment team</a></li>
+        </ul>
+      </div>
+    </details>
+  </div>
+
+
+  <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="home_hero-content">
+            <h1 class="home_hero-title">Join VinFast</h1>
+            <h2 class="home_hero-subtitle">Drive Your Career Forward</h2>
+        </div>
+        <img src="images/Home/Vinfast_background.png" alt="VinFast Background" class="home_hero-background">
     </section>
 
-    <section>
-      <!-- Search Section -->
-      <form id="search-form" class="search-form" action="#" method="get">
-        <div class="search-input-wrapper">
-          <input 
-            type="text" 
-            id="search-input" 
-            class="search-input" 
-            name="search" 
-            placeholder="Search jobs, skills, or locations...">
-          <button type="submit" id="search-btn" class="btn-search">Search</button>
+    <!-- Search Section -->
+    <section class="search-section">
+        <div class="search-box">
+            <span class="search-icon">&#128065;</span>
+            <input type="text" class="search-input" placeholder="Search jobs, skills, or locations...">
+            <button class="search-button">Search</button>
         </div>
-      </form>
+    </section>
 
-      <!-- Section Header -->
-      <h2 id="stats-heading" class="section-title">Drive the Future with Us</h2>
+    <!-- Info / Stats Section -->
+    <section class="stats-section">
+        <h2 class="stats-title">Drive the Future with Us</h2>
 
-      <!-- Key Statistics / Features Table -->
-      <table id="stats-table" class="stats-table">
-        <thead>
-          <tr class="stats-header-row">
-            <th class="stat-col">
-              <img class="stat-icon" src="images/Home/audience.png" alt="Team Members Icon">
-              <h3 class="stat-number">1,000+</h3>
-            </th>
-            <th class="stat-col">
-              <img class="stat-icon" src="images/Home/world.png" alt="Global Markets Icon">
-              <h3 class="stat-number">50+</h3>
-            </th>
-            <th class="stat-col">
-              <img class="stat-icon" src="images/Home/electric_car.png" alt="Electric Future Icon">
-              <h3 class="stat-number">100%</h3>
-            </th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr class="stats-body-row">
-            <td class="stat-description">Team Members<br>Growing together</td>
-            <td class="stat-description">Global Markets<br>Expanding worldwide</td>
-            <td class="stat-description">Electric Future<br>Clean energy, green planet</td>
-          </tr>
-        </tbody>
-      </table>
+        <div class="stats-grid">
+            <!-- Card 1 -->
+            <div class="stat-card">
+                <img src="audience.png" alt="Audience Icon" class="stat-icon">
+                <h3 class="stat-number">1000+</h3>
+                <p class="stat-description">
+                    Team Members<br>
+                    Growing together
+                </p>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="stat-card">
+                <img src="world.png" alt="World Icon" class="stat-icon">
+                <h3 class="stat-number">50+</h3>
+                <p class="stat-description">
+                    Global Markets <br>
+                    Expanding worldwide
+                </p>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="stat-card">
+                <img src="electric_car.png" alt="Electric Car Icon" class="stat-icon">
+                <h3 class="stat-number">100%</h3>
+                <p class="stat-description">
+                    Electric Future<br>
+                    Clean energy, green planet
+                </p>
+            </div>
+        </div>
     </section>
 
     <!-- Open Positions Section -->
-    <section class="featured-jobs">
-      <h2 id="jobs-heading">Featured Job Openings</h2>
-
-      <div class="table-container">
-        <table class="jobs-table">
-          <caption>Available career opportunities at VinFast</caption>
-          <thead>
-            <tr>
-              <th class="col-visual">Visual</th>
-              <th class="col-position">Position Details</th>
-              <th class="col-salary">Salary Range</th>
-              <th class="col-action">Action</th>
-            </tr>
-          </thead>
-          <tbody>
-            
-            <!-- Job Entry 1 -->
-            <tr>
-              <td class="col-visual">
-                <figure class="job-visual">
-                  <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=150&q=80" alt="E-Commerce UX/UI Front-End Developer position preview">
-                  <figcaption class="job-code">VF002</figcaption>
-                </figure>
-              </td>
-              <td class="col-position">
-                <article class="job-card">
-                  <h3 class="job-title">E-Commerce UX/UI Front-End Developer</h3>
-                  <ul class="meta-badges" aria-label="Job Attributes">
-                    <li><span class="badge">Ho Chi Minh</span></li>
-                    <li><span class="badge">Full-Time</span></li>
-                    <li><span class="badge">Hybrid</span></li>
-                  </ul>
-                  <p class="job-description">
-                    Craft beautiful, intuitive user experiences across web and mobile platforms. Work closely with product managers and engineers from concept to launch.
-                  </p>
-                </article>
-              </td>
-              <td class="col-salary">
-                <p class="salary-box">
-                  <strong class="salary-amount">$105,000 - $130,000</strong>
-                  <span class="salary-period">per year</span>
-                </p>
-              </td>
-              <td class="col-action">
-                <a href="Jobs.html#VF001" class="btn-explore">Explore Now</a>
-              </td>
+    <table class="job-table">
+        <tbody>
+            <!-- ROW 1: Header Công việc 1 -->
+            <tr class="job-header-row">
+                <td colspan="3">
+                    <div class="job-header-content">
+                        <div class="job-title-group">
+                            <span class="badge">VF001</span>
+                            <span class="job-title">E-Commerce UX/UI Front-End Developer</span>
+                        </div>
+                        <a href="#" class="btn-apply">APPLY NOW <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </td>
             </tr>
 
-            <!-- Job Entry 2 -->
-            <tr>
-              <td class="col-visual">
-                <figure class="job-visual">
-                  <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=150&q=80" alt="Digital Merchandising & Catalogue Specialist">
-                  <figcaption class="job-code">VF002</figcaption>
-                </figure>
-              </td>
-              <td class="col-position">
-                <article class="job-card">
-                  <h3 class="job-title">Digital Merchandising & Catalogue Specialist</h3>
-                  <ul class="meta-badges" aria-label="Job Attributes">
-                    <li><span class="badge">Ho Chi Minh</span></li>
-                    <li><span class="badge">Full-Time</span></li>
-                    <li><span class="badge">Remote</span></li>
-                  </ul>
-                  <p class="job-description">
-                    Lead the development of scalable web applications using React, Node.js, and cloud architecture. Drive code quality and mentor junior engineers.
-                  </p>
-                </article>
-              </td>
-              <td class="col-salary">
-                <p class="salary-box">
-                  <strong class="salary-amount">$130,000 - $160,000</strong>
-                  <span class="salary-period">per year</span>
-                </p>
-              </td>
-              <td class="col-action">
-                <a href="Jobs.html#VF002" class="btn-explore">Explore Now</a>
-              </td>
+            <!-- ROW 2: Chi tiết Công việc 1 -->
+            <tr class="job-details-row">
+                <td class="col-location">
+                    <div class="info-box">
+                        <i class="fa-solid fa-location-dot icon-blue"></i>
+                        <div class="info-title">Hybrid</div>
+                        <div class="info-desc">Ho Chi Minh City / Remote</div>
+                    </div>
+                </td>
+                <td class="col-salary">
+                    <div class="info-box">
+                        <i class="fa-solid fa-bag-shopping icon-blue"></i>
+                        <div class="info-desc salary-text">30,000,000 - 40,000,000 VND</div>
+                    </div>
+                </td>
+                <td class="col-tasks">
+                    <ul class="task-list">
+                        <li>Build engaging experiences</li>
+                        <li>Create scalable interfaces</li>
+                        <li>Collaborate cross-functionally</li>
+                        <li>Grow product impact</li>
+                    </ul>
+                </td>
             </tr>
-          </tbody>
-        </table>
+
+            <!-- ROW 3: Header Công việc 2 -->
+            <tr class="job-header-row">
+                <td colspan="3">
+                    <div class="job-header-content">
+                        <div class="job-title-group">
+                            <span class="badge">VF002</span>
+                            <span class="job-title">Digital Merchandising & Catalogue Specialist</span>
+                        </div>
+                        <a href="#" class="btn-apply">APPLY NOW <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </td>
+            </tr>
+
+            <!-- ROW 4: Chi tiết Công việc 2 -->
+            <tr class="job-details-row">
+                <td class="col-location">
+                    <div class="info-box">
+                        <i class="fa-solid fa-location-dot icon-blue"></i>
+                        <div class="info-title">Hybrid</div>
+                        <div class="info-desc">Ho Chi Minh City / Remote</div>
+                    </div>
+                </td>
+                <td class="col-salary">
+                    <div class="info-box">
+                        <i class="fa-solid fa-bag-shopping icon-blue"></i>
+                        <div class="info-desc salary-text">15,000,000 - 25,000,000 VND</div>
+                    </div>
+                </td>
+                <td class="col-tasks">
+                    <ul class="task-list">
+                        <li>Curate winning catalogues</li>
+                        <li>Optimize digital merchandising</li>
+                        <li>Analyze shopper behavior</li>
+                        <li>Drive conversion growth</li>
+                    </ul>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
       </div>
     </section>
   </main>
-
 </body>
+
+<!-- Footer -->
+<footer class="site-footer">
+  <div class="container site-footer__inner">
+    <div class="site-footer__brand">
+      <img src="images/Home/Vinfast_logo.png" alt="" width="83" height="66">
+      <p class="site-footer__tagline">Building a Cleaner, Smarter Tomorrow</p>
+    </div>
+    <p class="site-footer__ack">As a Swinburne University student project, we respectfully acknowledge the Wurundjeri People of the Kulin Nation. <a href="about.html#acknowledgement">Read the full acknowledgement</a></p>
+    <div class="site-footer__bottom">
+      <p class="site-footer__copy">© 2026 Team HCPS. Student project, not affiliated with VinFast. All roles are fictional.</p>
+      <ul class="site-footer__meta-links">
+        <li><a href="https://dovukhanhquynh.atlassian.net/jira/software/projects/SCRUM/boards/1?filter=&amp;groupBy=none">Jira project</a></li>
+        <li><a href="https://github.com/106394055/COS10026_Web-Technology-Project">GitHub repository</a></li>
+        <li><a href="[LIVE_SITE_URL]">Live site</a></li>
+        <li><a href="mailto:info@vinfast-digital-retail.example">Email</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
 </html>
