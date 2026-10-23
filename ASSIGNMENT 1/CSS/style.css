@@ -2453,3 +2453,195 @@ textarea:focus {
    F. MEDIA QUERIES (RESPONSIVE MOBILE)
    Chứa code co giãn màn hình cho tất cả các trang
    ========================================== */
+@media (max-width: 1100px) {
+  .page-jobs .role-meta {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+/* Tablet breakpoint: stack hero, un-float scam aside, and collapse multi-column grids */
+@media (max-width: 900px) {
+  .page-jobs .hero__grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Aside un-floats and drops below the panels and CTA button */
+  .page-jobs .overview {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .page-jobs .scam-aside {
+    order: 5;
+    float: none;
+    width: auto;
+    margin: 0;
+  }
+
+  .page-jobs .panel + .panel,
+  .page-jobs .how-to-actions {
+    margin-top: 0;
+  }
+
+  .page-jobs .how-to ol,
+  .page-jobs .role-grid,
+  .page-jobs .goal-list {
+    grid-template-columns: 1fr;
+  }
+
+  .page-jobs .role-meta {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* Mobile breakpoint: single-column metadata, full-width buttons, and full-screen modal sheet */
+@media (max-width: 600px) {
+  .page-jobs .role-meta {
+    grid-template-columns: 1fr;
+  }
+
+  .page-jobs .btn,
+  .page-jobs .role-modal__footer .btn {
+    width: 100%;
+  }
+
+  .page-jobs .panel.how-to {
+    padding: 18px 16px;
+  }
+
+  /* Pop-up becomes a full-screen sheet on phones */
+  .page-jobs .role-modal {
+    padding: 0;
+  }
+
+.page-jobs .role-modal__sheet {
+    max-height: 100vh;
+    min-height: 100vh;
+    border-radius: 0;
+  }
+
+  .page-jobs .role-tabs {
+    border-radius: 0;
+  }
+}
+
+/* ---- F.2 Accessibility, Reduced Motion, and Print ---- */
+
+/* High-visibility 3px keyboard focus ring with 2px offset across all interactive elements */
+:focus-visible {
+  outline: 3px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+/* Show focus outline on the hero slideshow when keyboard navigating radio inputs */
+.page-jobs .hero-slider:has(.hero-slider__radio:focus-visible) {
+  outline: 3px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+/* Switch focus ring to white on dark navy surfaces to preserve contrast */
+.site-footer :focus-visible,
+.page-jobs .how-to :focus-visible,
+.page-jobs .role-modal__footer :focus-visible {
+  outline-color: var(--color-surface);
+}
+
+/* Respect user OS preference for reduced motion by disabling smooth scroll and animations */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .page-jobs .role-modal:target .role-modal__sheet {
+    animation: none;
+  }
+
+  .site-nav a,
+  .btn,
+  .page-jobs .pill,
+  .page-jobs .hero-slider__track,
+  .page-jobs .hero-slider__btn,
+  .page-jobs .hero-slider__dot,
+  .page-jobs .see-more > summary::after {
+    transition: none;
+  }
+}
+
+/* Print stylesheet: hide interactive chrome and expand all role panels inline for paper output */
+@media print {
+  .site-bot,
+  .skip-link,
+  .page-jobs .hero-slider__arrows,
+  .page-jobs .hero-slider__dots,
+  .page-jobs .role-tabs,
+  .page-jobs .role-modal__backdrop {
+    display: none;
+  }
+
+  html {
+    background: none;
+  }
+
+  /* Print every role in full instead of hiding it behind a pop-up */
+  .page-jobs .role-modal {
+    display: block;
+    position: static;
+    padding: 0;
+    margin-top: 24px;
+    background: none;
+    overflow: visible;
+  }
+
+  .page-jobs .role-modal__sheet {
+    max-width: none;
+    box-shadow: none;
+    border: 1px solid #000000;
+  }
+
+  .page-jobs .scam-aside {
+    float: none;
+    width: auto;
+    margin: 0 0 16px 0;
+  }
+@media (max-width: 1024px) {
+
+    .team-grid,
+    .workflow-steps,
+    .tools-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .about-hero__inner {
+        flex-direction: column;
+    }
+
+    .info-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .team-grid,
+    .workflow-steps,
+    .tools-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .fun-facts-table th,
+    .fun-facts-table td {
+        display: block;
+        width: 100%;
+    }
+
+    .fun-facts-table thead {
+        display: none;
+        /* Hide standard header on small mobile to stack */
+    }
+
+    .fun-facts-table tbody th {
+        background-color: var(--color-primary);
+        color: var(--color-surface);
+    }
+}
+}
