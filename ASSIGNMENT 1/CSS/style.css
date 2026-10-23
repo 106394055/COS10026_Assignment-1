@@ -842,6 +842,732 @@ body {
    C. JOB LISTINGS STYLES (Trang Jobs)
    Code CSS riêng cho jobs.html
    ========================================== */
+.page-jobs .hero {
+  padding-top: 40px;
+  padding-bottom: 24px;
+}
+
+.page-jobs .hero__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr);
+  gap: clamp(24px, 4vw, 56px);
+  align-items: center;
+}
+
+.page-jobs .hero__eyebrow {
+  margin-bottom: 8px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  color: var(--color-primary-dark);
+}
+
+.page-jobs .hero__title {
+  margin-bottom: 12px;
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  color: var(--color-navy);
+}
+
+.page-jobs .hero__subtitle {
+  margin-bottom: 12px;
+  font-size: clamp(1.25rem, 2.4vw, 1.75rem);
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--color-navy);
+}
+
+.page-jobs .hero__text {
+  max-width: 52ch;
+  margin-bottom: 20px;
+  font-size: 1.05rem;
+}
+
+.page-jobs .hero__deadline {
+  display: inline-flex;
+  align-items: center;
+  min-height: 48px;
+  margin-bottom: 0;
+  padding: 10px 20px;
+  background-color: var(--color-primary);
+  color: var(--color-surface);
+  border-radius: 10px;
+  font-weight: 700;
+}
+
+.page-jobs .hero-slider {
+  position: relative;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  box-shadow: 0 10px 30px rgba(10, 31, 77, 0.15);
+  background-color: var(--color-navy);
+}
+
+/* Hide radio inputs visually while keeping them accessible */
+.page-jobs .hero-slider__radio {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: 0;
+  padding: 0;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.page-jobs .hero-slider__viewport {
+  overflow: hidden;
+  width: 100%;
+}
+
+/* Horizontal flex track holding all 9 slides side by side */
+.page-jobs .hero-slider__track {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  transition: transform 0.45s ease-in-out;
+}
+
+.page-jobs .hero-slider__slide {
+  flex: 0 0 100%;
+  width: 100%;
+}
+
+.page-jobs .hero-slider__slide img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  display: block;
+}
+
+/* Shift track to match checked radio button (Slides 1 to 9) */
+.page-jobs #hero-s1:checked ~ .hero-slider__viewport .hero-slider__track { transform: translateX(0%); }
+.page-jobs #hero-s2:checked ~ .hero-slider__viewport .hero-slider__track { transform: translateX(-100%); }
+.page-jobs #hero-s3:checked ~ .hero-slider__viewport .hero-slider__track { transform: translateX(-200%); }
+.page-jobs #hero-s4:checked ~ .hero-slider__viewport .hero-slider__track { transform: translateX(-300%); }
+.page-jobs #hero-s5:checked ~ .hero-slider__viewport .hero-slider__track { transform: translateX(-400%); }
+.page-jobs #hero-s6:checked ~ .hero-slider__viewport .hero-slider__track { transform: translateX(-500%); }
+.page-jobs #hero-s7:checked ~ .hero-slider__viewport .hero-slider__track { transform: translateX(-600%); }
+.page-jobs #hero-s8:checked ~ .hero-slider__viewport .hero-slider__track { transform: translateX(-700%); }
+.page-jobs #hero-s9:checked ~ .hero-slider__viewport .hero-slider__track { transform: translateX(-800%); }
+
+/* Previous / Next arrow pairs: show only the pair for the active slide */
+.page-jobs .hero-slider__nav {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 12px;
+  right: 12px;
+  transform: translateY(-50%);
+  justify-content: space-between;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.page-jobs #hero-s1:checked ~ .hero-slider__arrows .hero-slider__nav--1,
+.page-jobs #hero-s2:checked ~ .hero-slider__arrows .hero-slider__nav--2,
+.page-jobs #hero-s3:checked ~ .hero-slider__arrows .hero-slider__nav--3,
+.page-jobs #hero-s4:checked ~ .hero-slider__arrows .hero-slider__nav--4,
+.page-jobs #hero-s5:checked ~ .hero-slider__arrows .hero-slider__nav--5,
+.page-jobs #hero-s6:checked ~ .hero-slider__arrows .hero-slider__nav--6,
+.page-jobs #hero-s7:checked ~ .hero-slider__arrows .hero-slider__nav--7,
+.page-jobs #hero-s8:checked ~ .hero-slider__arrows .hero-slider__nav--8,
+.page-jobs #hero-s9:checked ~ .hero-slider__arrows .hero-slider__nav--9 {
+  display: flex;
+}
+
+/* 44x44px clickable Previous / Next buttons */
+.page-jobs .hero-slider__btn {
+  pointer-events: auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  background-color: rgba(10, 31, 77, 0.72);
+  color: var(--color-surface);
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  border-radius: 50%;
+  font-size: 1.15rem;
+  font-weight: 700;
+  cursor: pointer;
+  user-select: none;
+  transition: background-color 0.15s ease, transform 0.15s ease;
+}
+
+.page-jobs .hero-slider__btn:hover {
+  background-color: var(--color-primary);
+  transform: scale(1.06);
+}
+
+/* Bottom indicator dots */
+.page-jobs .hero-slider__dots {
+  position: absolute;
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+  padding: 6px 12px;
+  background-color: rgba(10, 31, 77, 0.6);
+  border-radius: 999px;
+  z-index: 2;
+}
+
+.page-jobs .hero-slider__dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.45);
+  border: 1px solid var(--color-surface);
+  cursor: pointer;
+  transition: background-color 0.15s ease, transform 0.15s ease;
+}
+
+.page-jobs .hero-slider__dot:hover {
+  background-color: var(--color-surface);
+}
+
+/* Highlight active slide dot */
+.page-jobs #hero-s1:checked ~ .hero-slider__dots label:nth-child(1),
+.page-jobs #hero-s2:checked ~ .hero-slider__dots label:nth-child(2),
+.page-jobs #hero-s3:checked ~ .hero-slider__dots label:nth-child(3),
+.page-jobs #hero-s4:checked ~ .hero-slider__dots label:nth-child(4),
+.page-jobs #hero-s5:checked ~ .hero-slider__dots label:nth-child(5),
+.page-jobs #hero-s6:checked ~ .hero-slider__dots label:nth-child(6),
+.page-jobs #hero-s7:checked ~ .hero-slider__dots label:nth-child(7),
+.page-jobs #hero-s8:checked ~ .hero-slider__dots label:nth-child(8),
+.page-jobs #hero-s9:checked ~ .hero-slider__dots label:nth-child(9) {
+  background-color: var(--color-primary);
+  transform: scale(1.25);
+}
+
+/* ---- C.2 Overview: panels, jump pills and the floated aside ---- */
+/* New block formatting context (flow-root) clears the right-floated scam warning aside */
+/* Trim global 56px bottom padding on Jobs main so footer sits closer */
+.page-jobs main {
+  padding-bottom: 20px;
+}
+
+.page-jobs .overview {
+  display: flow-root;
+  padding-top: 8px;
+  padding-bottom: 0;
+}
+
+/* Brief requirement: aside floated right, 25% width, with margin, padding and border */
+.page-jobs .scam-aside {
+  float: right;
+  width: 25%;
+  margin: 0 0 0 24px;
+  padding: 26px;
+  background-color: var(--color-warn-bg);
+  border: 2px solid var(--color-warn-border);
+  border-radius: 14px;
+  box-sizing: border-box;
+}
+
+.page-jobs .scam-aside__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  margin-bottom: 12px;
+  background-color: var(--color-warn-icon);
+  color: var(--color-warn-text);
+  border-radius: 50%;
+  font-size: 1.4rem;
+  font-weight: 800;
+}
+
+.page-jobs .scam-aside h2 {
+  margin-bottom: 8px;
+  font-size: 1.25rem;
+  line-height: 1.25;
+  color: var(--color-navy);
+}
+
+.page-jobs .scam-aside p,
+.page-jobs .scam-aside ul {
+  font-size: 0.95rem;
+}
+
+.page-jobs .scam-aside ul {
+  margin-bottom: 0;
+  padding-left: 20px;
+}
+
+.page-jobs .scam-aside li + li {
+  margin-top: 8px;
+}
+
+/* Panels sit beside the float: flow-root makes them fill the remaining width */
+.page-jobs .panel {
+  display: flow-root;
+  padding: 24px 28px;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 14px;
+  box-shadow: 0 2px 10px rgba(10, 31, 77, 0.06);
+}
+
+.page-jobs .panel + .panel {
+  margin-top: 16px;
+}
+
+.page-jobs .panel h2 {
+  margin-bottom: 8px;
+  font-size: 1.5rem;
+  color: var(--color-navy);
+}
+
+.page-jobs .panel p:last-child {
+  margin-bottom: 0;
+}
+
+.page-jobs .panel__label {
+  margin-bottom: 12px;
+  font-weight: 700;
+  color: var(--color-navy);
+}
+
+/* Flex row of pill triggers that open the CSS-only role modal panels */
+.page-jobs .pill-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.page-jobs .pill {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 8px 18px;
+  background-color: var(--color-surface);
+  color: var(--color-primary-dark);
+  border: 2px solid var(--color-primary);
+  border-radius: 999px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.page-jobs .pill[href^="#"]:hover {
+  background-color: var(--color-primary);
+  color: var(--color-surface);
+}
+
+/* ---- C.3 How to apply (steps + CTA aligned in one balanced row) ---- */
+.page-jobs .panel.how-to {
+  padding: 18px 24px;
+  background-color: var(--color-navy);
+  border-color: var(--color-navy);
+  color: var(--color-surface);
+}
+
+.page-jobs .how-to h2 {
+  margin-bottom: 12px;
+  font-size: 1.35rem;
+  color: var(--color-surface);
+}
+
+.page-jobs .how-to__body {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 20px;
+  align-items: center;
+}
+
+.page-jobs .how-to ol {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: step;
+}
+
+.page-jobs .how-to li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 0.9rem;
+  line-height: 1.35;
+  counter-increment: step;
+}
+
+.page-jobs .how-to li::before {
+  content: counter(step);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 26px;
+  height: 26px;
+  background-color: var(--color-primary);
+  color: var(--color-surface);
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.page-jobs .how-to__cta {
+  white-space: nowrap;
+  padding: 10px 18px;
+  font-size: 0.9rem;
+  box-shadow: 0 4px 14px rgba(11, 95, 255, 0.35);
+}
+
+/* ---- C.4 Role pop-ups (CSS-only, opened with :target) ---- */
+/* Hidden fixed overlay by default; becomes visible when its ID matches the URL hash */
+.page-jobs .role-modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  overflow: hidden;
+  padding: 24px 16px;
+  background-color: rgba(10, 31, 77, 0.6);
+}
+
+/* Reveal the targeted role modal without JavaScript */
+.page-jobs .role-modal:target {
+  display: block;
+}
+
+/* Lock page scroll while a role panel is open */
+html:has(.role-modal:target) {
+  overflow: hidden;
+}
+
+/* Clicking the dimmed area closes the panel and returns to #role-links */
+.page-jobs .role-modal__backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+}
+
+/* Foreground modal dialog container sitting above the clickable backdrop */
+.page-jobs .role-modal__sheet {
+  position: relative;
+  z-index: 1;
+  max-width: 960px;
+  max-height: calc(100vh - 48px);
+  overflow-y: auto;
+  margin: 0 auto;
+  padding-bottom: 4px;
+  background-color: var(--color-surface);
+  border-radius: 16px;
+  box-shadow: 0 24px 60px rgba(10, 31, 77, 0.35);
+}
+
+/* Subtle entrance animation when opening or switching a role modal */
+.page-jobs .role-modal:target .role-modal__sheet {
+  animation: sheet-in 0.25s ease-out;
+}
+
+@keyframes sheet-in {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Apply horizontal margin to all direct children of the sheet except the full-bleed sticky tab bar */
+.page-jobs .role-modal__sheet > :not(.role-tabs) {
+  margin-left: clamp(16px, 3vw, 32px);
+  margin-right: clamp(16px, 3vw, 32px);
+}
+
+/* Universal adjacent sibling selector (* + *) adding vertical spacing between sheet sections */
+.page-jobs .role-modal__sheet > * + * {
+  margin-top: 20px;
+}
+
+/* Sticky tab bar: switch role without closing the panel */
+.page-jobs .role-tabs {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 20px;
+  background-color: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+  border-radius: 16px 16px 0 0;
+}
+
+.page-jobs .role-tabs ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.page-jobs .role-tabs a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 8px 16px;
+  color: var(--color-primary-dark);
+  border: 2px solid var(--color-border);
+  border-radius: 999px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.page-jobs .role-tabs a:hover {
+  border-color: var(--color-primary);
+}
+
+/* Highlight the currently active role tab inside the modal */
+.page-jobs .role-tabs a[aria-current="true"] {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+  color: var(--color-surface);
+}
+
+/* Visible Close link returning focus to #role-links (replaces JS Esc key handler) */
+.page-jobs .role-modal__close {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 8px 16px;
+  color: var(--color-navy);
+  font-weight: 700;
+  text-decoration: underline;
+  border-radius: 8px;
+}
+
+/* Role header: department heading, summary text, role title, reference chip, and CTA */
+.page-jobs .role-modal__head h2 {
+  margin-top: 8px;
+  margin-bottom: 4px;
+  font-size: 1.4rem;
+  color: var(--color-navy);
+}
+
+.page-jobs .dept-text {
+  margin-bottom: 16px;
+  color: var(--color-muted);
+}
+
+.page-jobs .role-modal__title-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.page-jobs .role-modal__title-row h3 {
+  flex: 1 1 320px;
+  margin: 0;
+  font-size: 1.75rem;
+  line-height: 1.2;
+  color: var(--color-navy);
+}
+
+/* Five-column definition list grid displaying key role metadata */
+.page-jobs .role-meta {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 16px;
+  margin-bottom: 0;
+  padding: 16px 20px;
+  background-color: var(--color-bg);
+  border-radius: 12px;
+}
+
+.page-jobs .role-meta dt {
+  margin-bottom: 2px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--color-muted);
+}
+
+.page-jobs .role-meta dd {
+  margin: 0;
+  font-size: 0.95rem;
+  color: var(--color-navy);
+}
+
+/* Two-column CSS Grid holding the role detail blocks */
+.page-jobs .role-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.page-jobs .block {
+  padding: 20px 22px;
+  background-color: var(--color-block);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+}
+
+/* Modifier class spanning a block across both grid columns */
+.page-jobs .block--wide {
+  grid-column: 1 / -1;
+}
+
+.page-jobs .block h4 {
+  margin-bottom: 0;
+  font-size: 1.2rem;
+  color: var(--color-navy);
+}
+
+.page-jobs .block__context {
+  margin-bottom: 12px;
+  font-size: 0.9rem;
+  color: var(--color-muted);
+}
+
+.page-jobs .block ul,
+.page-jobs .block ol {
+  margin-bottom: 0;
+  padding-left: 22px;
+}
+
+.page-jobs .block li + li {
+  margin-top: 6px;
+}
+
+/* Style list numbers and bullets inside role blocks in dark primary blue */
+.page-jobs .block li::marker {
+  font-weight: 700;
+  color: var(--color-primary-dark);
+}
+
+.page-jobs .block p:last-child {
+  margin-bottom: 0;
+}
+
+/* Two-column sub-grid for 30/60/90-day performance goal tiles */
+.page-jobs .goal-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.page-jobs .goal {
+  padding: 14px 16px;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+}
+
+.page-jobs .goal__label {
+  margin-bottom: 4px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--color-primary-dark);
+}
+
+.page-jobs .goal p:last-child {
+  margin-bottom: 0;
+}
+
+/* See more: native <details>, no JavaScript */
+.page-jobs .see-more {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+}
+
+.page-jobs .see-more > summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 48px;
+  padding: 10px 20px;
+  color: var(--color-primary-dark);
+  font-weight: 700;
+  cursor: pointer;
+  list-style: none;
+  border-radius: 12px;
+}
+
+.page-jobs .see-more > summary::-webkit-details-marker {
+  display: none;
+}
+
+/* Pure CSS chevron indicator built with rotated right and bottom borders */
+.page-jobs .see-more > summary::after {
+  content: "";
+  width: 10px;
+  height: 10px;
+  margin-left: 12px;
+  border-right: 3px solid currentColor;
+  border-bottom: 3px solid currentColor;
+  transform: rotate(45deg);
+  transition: transform 0.2s ease;
+}
+
+.page-jobs .see-more[open] > summary {
+  border-bottom: 1px solid var(--color-border);
+  border-radius: 12px 12px 0 0;
+}
+
+/* Flip chevron upward when <details> is expanded */
+.page-jobs .see-more[open] > summary::after {
+  transform: rotate(-135deg);
+}
+
+.page-jobs .see-more .role-grid {
+  padding: 16px;
+}
+
+/* Bottom navy call-to-action strip inside each role modal sheet */
+.page-jobs .role-modal__footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 28px;
+  padding: 20px 24px;
+  background-color: var(--color-navy);
+  color: var(--color-surface);
+  border-radius: 12px;
+}
+
+.page-jobs .role-modal__footer p {
+  margin: 0;
+}
+
+.page-jobs .role-modal__footer strong {
+  display: block;
+  font-size: 1.15rem;
+}
+
+.page-jobs .role-modal__footer .btn {
+  background-color: var(--color-surface);
+  color: var(--color-navy);
+}
+
+.page-jobs .role-modal__footer .btn:hover {
+  background-color: var(--color-chip);
+}
 
 
 /* ==========================================
@@ -2047,6 +2773,157 @@ textarea:focus {
    F. MEDIA QUERIES (RESPONSIVE MOBILE)
    Chứa code co giãn màn hình cho tất cả các trang
    ========================================== */
+@media (max-width: 1100px) {
+  .page-jobs .role-meta {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+/* Tablet breakpoint: stack hero, un-float scam aside, and collapse multi-column grids */
+@media (max-width: 900px) {
+  .page-jobs .hero__grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Aside un-floats and drops below the panels and CTA button */
+  .page-jobs .overview {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .page-jobs .scam-aside {
+    order: 5;
+    float: none;
+    width: auto;
+    margin: 0;
+  }
+
+  .page-jobs .panel + .panel,
+  .page-jobs .how-to-actions {
+    margin-top: 0;
+  }
+
+  .page-jobs .how-to ol,
+  .page-jobs .role-grid,
+  .page-jobs .goal-list {
+    grid-template-columns: 1fr;
+  }
+
+  .page-jobs .role-meta {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* Mobile breakpoint: single-column metadata, full-width buttons, and full-screen modal sheet */
+@media (max-width: 600px) {
+  .page-jobs .role-meta {
+    grid-template-columns: 1fr;
+  }
+
+  .page-jobs .btn,
+  .page-jobs .role-modal__footer .btn {
+    width: 100%;
+  }
+
+  .page-jobs .panel.how-to {
+    padding: 18px 16px;
+  }
+
+  /* Pop-up becomes a full-screen sheet on phones */
+  .page-jobs .role-modal {
+    padding: 0;
+  }
+
+.page-jobs .role-modal__sheet {
+    max-height: 100vh;
+    min-height: 100vh;
+    border-radius: 0;
+  }
+
+  .page-jobs .role-tabs {
+    border-radius: 0;
+  }
+}
+
+/* ---- F.2 Accessibility, Reduced Motion, and Print ---- */
+
+/* High-visibility 3px keyboard focus ring with 2px offset across all interactive elements */
+:focus-visible {
+  outline: 3px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+/* Show focus outline on the hero slideshow when keyboard navigating radio inputs */
+.page-jobs .hero-slider:has(.hero-slider__radio:focus-visible) {
+  outline: 3px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+/* Switch focus ring to white on dark navy surfaces to preserve contrast */
+.site-footer :focus-visible,
+.page-jobs .how-to :focus-visible,
+.page-jobs .role-modal__footer :focus-visible {
+  outline-color: var(--color-surface);
+}
+
+/* Respect user OS preference for reduced motion by disabling smooth scroll and animations */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .page-jobs .role-modal:target .role-modal__sheet {
+    animation: none;
+  }
+
+  .site-nav a,
+  .btn,
+  .page-jobs .pill,
+  .page-jobs .hero-slider__track,
+  .page-jobs .hero-slider__btn,
+  .page-jobs .hero-slider__dot,
+  .page-jobs .see-more > summary::after {
+    transition: none;
+  }
+}
+
+/* Print stylesheet: hide interactive chrome and expand all role panels inline for paper output */
+@media print {
+  .site-bot,
+  .skip-link,
+  .page-jobs .hero-slider__arrows,
+  .page-jobs .hero-slider__dots,
+  .page-jobs .role-tabs,
+  .page-jobs .role-modal__backdrop {
+    display: none;
+  }
+
+  html {
+    background: none;
+  }
+
+  /* Print every role in full instead of hiding it behind a pop-up */
+  .page-jobs .role-modal {
+    display: block;
+    position: static;
+    padding: 0;
+    margin-top: 24px;
+    background: none;
+    overflow: visible;
+  }
+
+  .page-jobs .role-modal__sheet {
+    max-width: none;
+    box-shadow: none;
+    border: 1px solid #000000;
+  }
+
+  .page-jobs .scam-aside {
+    float: none;
+    width: auto;
+    margin: 0 0 16px 0;
+  }
 @media (max-width: 1024px) {
 
     .team-grid,
@@ -2086,4 +2963,5 @@ textarea:focus {
         background-color: var(--color-primary);
         color: var(--color-surface);
     }
+}
 }
