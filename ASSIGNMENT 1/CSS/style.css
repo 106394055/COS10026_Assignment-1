@@ -509,7 +509,6 @@ h1, h2, h3, h4, p, ul, ol, dl, dd {
    Code CSS riêng cho index.html
    ========================================== */
 
-/* ================= GLOBAL STYLES ================= */
 * {
     margin: 0;
     padding: 0;
@@ -527,7 +526,7 @@ body {
     padding: 20px;
 }
 
-/* ================= HERO SECTION ================= */
+/* HERO SECTION */
 .hero-section {
     position: relative;
     width: 100%;
@@ -567,7 +566,7 @@ body {
     font-weight: 700;
 }
 
-/* ================= SEARCH SECTION ================= */
+/* SEARCH SECTION */
 .search-section {
     width: 100%;
     display: flex;
@@ -621,7 +620,7 @@ body {
     background-color: #0056b3;
 }
 
-/* ================= STATS SECTION ================= */
+/* STATS SECTION */
 .stats-section {
     width: 100%;
     text-align: center;
@@ -671,7 +670,7 @@ body {
     line-height: 1.35;
 }
 
-/* ================= JOB TABLE SECTION ================= */
+/* JOB TABLE SECTION */
 .job-table {
     width: 100%;
     max-width: 900px;
@@ -765,6 +764,7 @@ body {
 
 .col-tasks {
     width: 38%;
+    padding-left: 30px;
 }
 
 /* Info Box */
@@ -776,7 +776,7 @@ body {
     text-align: center;
 }
 
-.icon-blue {
+.job-icon {
     font-size: 20px;
     color: #0066ff;
     margin-bottom: 8px;
@@ -805,36 +805,6 @@ body {
 .salary-text {
     font-weight: 600;
     color: #2d3748;
-}
-
-/* Task List */
-.task-list {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    padding-left: 10px;
-}
-
-.task-list li {
-    font-size: 13.5px;
-    color: #2d3748;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.icon-task {
-    color: #0066ff;
-    background-color: #e2edff;
-    width: 26px;
-    height: 26px;
-    border-radius: 6px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 12px;
-    flex-shrink: 0;
 }
 
 
