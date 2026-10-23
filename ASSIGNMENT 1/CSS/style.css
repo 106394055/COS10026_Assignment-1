@@ -1,1 +1,34 @@
+/* ==========================================
+   1. GLOBAL & COMMON STYLES (Dùng chung cho cả nhóm)
+   Header, Navigation, Footer, Colors, Fonts, Resets
+   ========================================== */
 
+
+/* ==========================================
+   2. HOME PAGE STYLES (Trang Index)
+   Code CSS riêng cho index.html
+   ========================================== */
+
+
+/* ==========================================
+   3. JOB LISTINGS STYLES (Trang Jobs)
+   Code CSS riêng cho jobs.html
+   ========================================== */
+
+
+/* ==========================================
+   4. APPLICATION FORM STYLES (Trang Apply)
+   Code CSS riêng cho apply.html (Flexbox/Grid, form controls, timeline)
+   ========================================== */
+
+
+/* ==========================================
+   5. ABOUT PAGE STYLES (Trang About)
+   Code CSS riêng cho about.html
+   ========================================== */
+
+
+/* ==========================================
+   6. MEDIA QUERIES (RESPONSIVE MOBILE)
+   Chứa code co giãn màn hình cho tất cả các trang
+   ========================================== */
