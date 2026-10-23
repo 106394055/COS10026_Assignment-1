@@ -1,34 +1,534 @@
 /* ==========================================
-   1. GLOBAL & COMMON STYLES (Dùng chung cho cả nhóm)
+   A. GLOBAL & COMMON STYLES (Dùng chung cho cả nhóm)
    Header, Navigation, Footer, Colors, Fonts, Resets
-   ========================================== */
+   ========================================== 
+   TABLE OF CONTENTS
+  1. Tokens (:root)
+  2. Base and reset
+  3. Shared components (skip link, header and nav, footer, buttons, chips, breadcrumb, bot)
+   */
+
+/*1. TOKENS (:root) - Colors */
+:root {
+  --color-primary: #0b5fff;
+  --color-primary-dark: #0847c4;
+  --color-navy: #0a1f4d;
+  --color-nav: #0b274b;
+  --color-bg: #eef4fc;
+  --color-surface: #ffffff;
+  --color-block: #f5f9ff;
+  --color-border: #dbe6f5;
+  --color-chip: #e3edff;
+  --color-text: #333333;
+  --color-muted: #4a5a72;
+  --color-warn-bg: #fff3e6;
+  --color-warn-border: #f59e0b;
+  --color-warn-icon: #ffe0b8;
+  --color-warn-text: #b45309;
+  --bg-top: #e8f1ff;
+  --bg-bottom: #ffffff;
+}
+
+/*2. BASE AND RESET */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+   /*Rising gradient background while scrolling down the page*/
+html {
+  min-height: 100%;
+  font-size: 16px;
+  background-color: var(--bg-top);
+  background-image: linear-gradient(180deg, var(--bg-top) 0%, var(--bg-bottom) 100%);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column; /* sticky footer: main grows, footer sits at the bottom */
+  font-family: "Inter", "Segoe UI", Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--color-text);
+  background-color: transparent;
+}
+
+main {
+  flex: 1 0 auto;
+  padding-bottom: 56px; /* breathing room above the footer */
+}
+
+[id] {
+  scroll-margin-top: 24px;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+h1,
+h2,
+h3,
+h4,
+p,
+ul,
+ol,
+dl,
+dd {
+  margin-top: 0;
+}
+
+.container {
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: clamp(1rem, 5.5vw, 5rem);
+  padding-right: clamp(1rem, 5.5vw, 5rem);
+}
+
+/*3. SHARED COMPONENTS */
+
+   /*Skip link */
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 16px;
+  z-index: 200;
+  min-height: 44px;
+  padding: 10px 18px;
+  background-color: var(--color-primary);
+  color: var(--color-surface);
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 8px;
+}  
+
+.skip-link:focus,
+.skip-link:focus-visible {
+  top: 12px;
+}
+
+   /*Site header and navigation */
+.site-header {
+  background-color: transparent;
+  color: var(--color-nav);
+}
+
+   /*Logo on left and navigation on right */   
+.site-header__inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+   /*Clickable logo */
+.site-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0;
+  min-height: 44px;
+  color: var(--color-nav);
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.site-brand img {
+  width: auto;
+  height: 48px;
+  margin-left: -22px;
+}
+
+.site-brand__wordmark {
+  margin-left: 2px;
+}
+
+   /*Horizontal navigation menu */
+.site-nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+   /* Navigation links with 44px minimum touch target and bottom indicator border */
+.site-nav a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 8px 16px;
+  color: var(--color-nav);
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 0;
+  border-bottom: 3px solid transparent;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+
+.site-nav a:hover {
+  background-color: transparent;
+  color: var(--color-primary);
+  border-bottom-color: rgba(11, 95, 255, 0.4); /* visible on pale backgrounds */
+}
+
+   /* Attribute selector highlighting the active page in the navigation bar */
+.site-nav a[aria-current="page"] {
+  background-color: transparent;
+  color: var(--color-primary);
+  border-bottom-color: var(--color-primary);
+}
+
+   /* Small screens: wrap navigation links under logo */
+@media (max-width: 600px) {
+  .site-header__inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+   /*Shared buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 10px 22px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  line-height: 1.25;
+  text-decoration: none;
+  border-radius: 10px;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+
+   /* Primary clicked button in VinFast royal blue */
+.btn--primary {
+  background-color: var(--color-primary);
+  color: var(--color-surface);
+}
+
+.btn--primary:hover {
+  background-color: var(--color-primary-dark);
+}
+
+   /* Pill-shaped status and job reference badges - FOR JOBS PAGE */
+.chip,
+.ref-chip {
+  display: inline-flex;
+  align-items: center;
+  min-height: 34px;
+  padding: 4px 12px;
+  background-color: var(--color-chip);
+  color: var(--color-primary-dark);
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  font-size: 0.875rem;
+  font-weight: 600;
+}   
+
+   /* Breadcrumb navigation for jobs and apply pages */
+.breadcrumb {
+  padding-top: 16px;
+  padding-bottom: 8px;
+}
+
+.breadcrumb ol {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: 0.9rem;
+  color: var(--color-muted);
+}
+
+.breadcrumb li + li::before {
+  content: ">";
+  margin-right: 8px;
+  color: var(--color-muted);
+}
+
+.breadcrumb a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 4px 6px;
+  color: var(--color-primary-dark);
+  text-decoration: underline;
+  font-weight: 500;
+}
+
+.breadcrumb a:hover {
+  color: var(--color-navy);
+}  
+
+   /*Assisstant bot*/
+.site-bot {
+  position: fixed;
+  right: 24px;
+  bottom: 186px; /* lifted from 24px */
+  z-index: 90;
+}
+
+@media (max-width: 600px) {
+  .site-bot {
+    right: 16px;
+    bottom: 16px;
+  }
+
+  .site-bot__badge {
+    display: none;
+  }
+}
+
+   /* Bot trigger button */
+.site-bot__trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 48px;
+  padding: 6px 14px 6px 8px;
+  background-color: var(--color-navy);
+  color: var(--color-surface);
+  border: 2px solid var(--color-primary);
+  border-radius: 999px;
+  box-shadow: 0 8px 24px rgba(10, 31, 77, 0.22);
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  list-style: none;
+}
+
+.site-bot__trigger::-webkit-details-marker {
+  display: none;
+}
+
+.site-bot__trigger:hover {
+  background-color: var(--color-primary-dark);
+}
+
+.site-bot__trigger img {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+   /* Bot panel when clicked*/
+.site-bot__panel {
+  position: absolute;
+  right: 0;
+  bottom: calc(100% + 12px);
+  width: min(320px, calc(100vw - 32px));
+  padding: 18px;
+  background-color: var(--color-surface);
+  color: var(--color-text);
+  border: 1px solid var(--color-border);
+  border-radius: 14px;
+  box-shadow: 0 14px 34px rgba(10, 31, 77, 0.2);
+}
+
+.site-bot__title {
+  margin-bottom: 6px;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-navy);
+}
+
+.site-bot__text {
+  margin-bottom: 12px;
+  font-size: 0.88rem;
+  color: var(--color-muted);
+}
+
+   /* Bot links list */
+.site-bot__links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 6px;
+}
+
+.site-bot__links a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 6px 12px;
+  background-color: var(--color-block);
+  color: var(--color-primary-dark);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.site-bot__links a:hover {
+  background-color: var(--color-chip);
+}
+
+   /*Footer */
+.site-footer {
+  flex-shrink: 0;
+  margin-top: auto; /* flex column body: pins the footer to the bottom of short pages */
+  padding-top: 20px;
+  padding-bottom: 14px;
+  background-color: var(--color-navy);
+  color: var(--color-border);
+  font-size: 0.9rem;
+}
+
+   /* Brand and acknowledgment sections in the footer */
+.site-footer__inner {
+  display: grid;
+  grid-template-columns: minmax(0, 340px) minmax(0, 1fr);
+  grid-template-areas:
+    "brand ack"
+    "bottom bottom";
+  gap: 12px 40px;
+  align-items: start;
+}
+
+.site-footer__brand {
+  grid-area: brand;
+  display: flex;
+  align-items: center;
+}
+   /* Footer logo */
+.site-footer__brand img {
+  width: auto;
+  height: 36px;
+  margin-left: -16px;
+}
+
+.site-footer__tagline {
+  margin: 0 0 0 2px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-surface);
+}
+
+.site-footer__ack {
+  grid-area: ack;
+  max-width: 90ch;
+  margin: 0;
+}
+
+   /* Copyright and meta links at the bottom of the footer */
+.site-footer__bottom {
+  grid-area: bottom;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4px 24px;
+  padding-top: 8px;
+  border-top: 1px solid var(--color-nav);
+}
+
+.site-footer__copy {
+  margin: 0;
+  font-size: 0.85rem;
+}
+
+.site-footer__meta-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.site-footer a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 32px; /* above the WCAG 2.2 AA minimum target size of 24px */
+  padding: 2px 6px;
+  color: var(--color-border);
+  text-decoration: underline;
+}
+
+.site-footer a:hover {
+  color: var(--color-surface);
+}
+
+.site-footer__ack a {
+  display: inline;
+  min-height: 0;
+  padding: 0;
+  color: var(--color-surface);
+  font-weight: 600;
+  white-space: nowrap;
+}
+   /* Responsive footer layout for smaller screens */
+@media (max-width: 900px) {
+  .site-footer {
+    padding-bottom: 72px;
+  }
+
+  .site-footer__inner {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "brand"
+      "ack"
+      "bottom";
+  }
+
+  .site-footer__bottom {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
 
 
 /* ==========================================
-   2. HOME PAGE STYLES (Trang Index)
+   B. HOME PAGE STYLES (Trang Index)
    Code CSS riêng cho index.html
    ========================================== */
 
 
 /* ==========================================
-   3. JOB LISTINGS STYLES (Trang Jobs)
+   C. JOB LISTINGS STYLES (Trang Jobs)
    Code CSS riêng cho jobs.html
    ========================================== */
 
 
 /* ==========================================
-   4. APPLICATION FORM STYLES (Trang Apply)
+   D. APPLICATION FORM STYLES (Trang Apply)
    Code CSS riêng cho apply.html (Flexbox/Grid, form controls, timeline)
    ========================================== */
 
 
 /* ==========================================
-   5. ABOUT PAGE STYLES (Trang About)
+   E. ABOUT PAGE STYLES (Trang About)
    Code CSS riêng cho about.html
    ========================================== */
 
 
 /* ==========================================
-   6. MEDIA QUERIES (RESPONSIVE MOBILE)
+   F. MEDIA QUERIES (RESPONSIVE MOBILE)
    Chứa code co giãn màn hình cho tất cả các trang
    ========================================== */
