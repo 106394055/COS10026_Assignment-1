@@ -4,38 +4,171 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Explore careers and opportunities at VinFast.">
+  <meta name="author" content="Nguyen Nhat Thanh">
   <title>Careers at VinFast</title>
-  <link rel="stylesheet" href="../CSS/style.css">
+  <link rel="stylesheet" href="CSS/style.css">
 </head>
 <body>
-  <main class="page">
-    <section class="hero" id="home" aria-label="VinFast careers">
-      <header class="site-header">
-        <a class="brand" href="#home" aria-label="VinFast home">
-          <img class="brand-logo" src="../images/Home/Vinfast_logo.png" alt="VinFast logo">
-        </a>
+  
+  <!-- Main Site Header -->
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="VinFast Home">
+      <img class="brand-logo" src="images/Home/Vinfast_logo.png" alt="VinFast Logo">
+    </a>
 
-        <nav class="main-navigation" aria-label="Main navigation">
-          <a class="active" href="index.html" aria-current="page">Home</a>
-          <a href="Jobs.html">Jobs</a>
-          <a href="Apply.html">Apply</a>
-          <a href="About.html">About</a>
-        </nav>
+    <nav class="main-navigation" aria-label="Main Navigation">
+      <a class="active" href="index.html" aria-current="page">Home</a>
+      <a href="Jobs.html">Jobs</a>
+      <a href="Apply.html">Apply</a>
+      <a href="About.html">About</a>
+    </nav>
 
-        <a class="chatbot" href="chatbot.html" aria-label="Chat with VinFast">
-          <img src="../images/Home/Vinfast_chatbot.png" alt="VinFast chatbot">
-        </a>
-      </header>
+    <a class="chatbot-link" href="chatbot.html" aria-label="Chat with VinFast Assistant">
+      <img src="images/Home/Vinfast_chatbot.png" alt="VinFast Chatbot Icon">
+    </a>
+  </header>
 
-      <div class="hero-title">
+  <main class="page-content">
+    <!-- Hero Banner Section -->
+    <section class="hero" id="home" aria-label="VinFast Careers Hero">
+      <header class="hero-header">
         <h1>
           <span class="hero-title-accent">Join VinFast</span>
-          <span>Drive Your Career Forward</span>
+          <span class="hero-title-main">Drive Your Career Forward</span>
         </h1>
-      </div>
+      </header>
     </section>
 
+    <section>
+      <!-- Search Section -->
+      <form id="search-form" class="search-form" action="#" method="get">
+        <div class="search-input-wrapper">
+          <input 
+            type="text" 
+            id="search-input" 
+            class="search-input" 
+            name="search" 
+            placeholder="Search jobs, skills, or locations...">
+          <button type="submit" id="search-btn" class="btn-search">Search</button>
+        </div>
+      </form>
+
+      <!-- Section Header -->
+      <h2 id="stats-heading" class="section-title">Drive the Future with Us</h2>
+
+      <!-- Key Statistics / Features Table -->
+      <table id="stats-table" class="stats-table">
+        <thead>
+          <tr class="stats-header-row">
+            <th class="stat-col">
+              <img class="stat-icon" src="images/Home/audience.png" alt="Team Members Icon">
+              <h3 class="stat-number">1,000+</h3>
+            </th>
+            <th class="stat-col">
+              <img class="stat-icon" src="images/Home/world.png" alt="Global Markets Icon">
+              <h3 class="stat-number">50+</h3>
+            </th>
+            <th class="stat-col">
+              <img class="stat-icon" src="images/Home/electric_car.png" alt="Electric Future Icon">
+              <h3 class="stat-number">100%</h3>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="stats-body-row">
+            <td class="stat-description">Team Members<br>Growing together</td>
+            <td class="stat-description">Global Markets<br>Expanding worldwide</td>
+            <td class="stat-description">Electric Future<br>Clean energy, green planet</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Open Positions Section -->
+    <section class="featured-jobs">
+      <h2 id="jobs-heading">Featured Job Openings</h2>
+
+      <div class="table-container">
+        <table class="jobs-table">
+          <caption>Available career opportunities at VinFast</caption>
+          <thead>
+            <tr>
+              <th class="col-visual">Visual</th>
+              <th class="col-position">Position Details</th>
+              <th class="col-salary">Salary Range</th>
+              <th class="col-action">Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            
+            <!-- Job Entry 1 -->
+            <tr>
+              <td class="col-visual">
+                <figure class="job-visual">
+                  <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=150&q=80" alt="E-Commerce UX/UI Front-End Developer position preview">
+                  <figcaption class="job-code">VF002</figcaption>
+                </figure>
+              </td>
+              <td class="col-position">
+                <article class="job-card">
+                  <h3 class="job-title">E-Commerce UX/UI Front-End Developer</h3>
+                  <ul class="meta-badges" aria-label="Job Attributes">
+                    <li><span class="badge">Ho Chi Minh</span></li>
+                    <li><span class="badge">Full-Time</span></li>
+                    <li><span class="badge">Hybrid</span></li>
+                  </ul>
+                  <p class="job-description">
+                    Craft beautiful, intuitive user experiences across web and mobile platforms. Work closely with product managers and engineers from concept to launch.
+                  </p>
+                </article>
+              </td>
+              <td class="col-salary">
+                <p class="salary-box">
+                  <strong class="salary-amount">$105,000 - $130,000</strong>
+                  <span class="salary-period">per year</span>
+                </p>
+              </td>
+              <td class="col-action">
+                <a href="Jobs.html#VF001" class="btn-explore">Explore Now</a>
+              </td>
+            </tr>
+
+            <!-- Job Entry 2 -->
+            <tr>
+              <td class="col-visual">
+                <figure class="job-visual">
+                  <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=150&q=80" alt="Digital Merchandising & Catalogue Specialist">
+                  <figcaption class="job-code">VF002</figcaption>
+                </figure>
+              </td>
+              <td class="col-position">
+                <article class="job-card">
+                  <h3 class="job-title">Digital Merchandising & Catalogue Specialist</h3>
+                  <ul class="meta-badges" aria-label="Job Attributes">
+                    <li><span class="badge">Ho Chi Minh</span></li>
+                    <li><span class="badge">Full-Time</span></li>
+                    <li><span class="badge">Remote</span></li>
+                  </ul>
+                  <p class="job-description">
+                    Lead the development of scalable web applications using React, Node.js, and cloud architecture. Drive code quality and mentor junior engineers.
+                  </p>
+                </article>
+              </td>
+              <td class="col-salary">
+                <p class="salary-box">
+                  <strong class="salary-amount">$130,000 - $160,000</strong>
+                  <span class="salary-period">per year</span>
+                </p>
+              </td>
+              <td class="col-action">
+                <a href="Jobs.html#VF002" class="btn-explore">Explore Now</a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </section>
   </main>
+
 </body>
 </html>
