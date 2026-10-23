@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="VinFast Job Application Form">
+    <meta name="keywords" content="VinFast, Job Application, Careers, Automotive">
+    <meta name="author" content="Đỗ Vũ Khánh Quỳnh">
+    <title>VinFast - Job Application</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <!-- Header & Common Navigation -->
+    <header class="main-header">
+        <div class="logo-container">
+            <img src="images/logo.png" alt="VinFast Logo" class="logo">
+        </div>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="jobs.html">Jobs</a></li>
+                <li><a href="apply.html" class="active">Apply</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+        </nav>
+        <!-- Icon robot ở góc phải header theo đúng yêu cầu thiết kế -->
+        <div class="header-robot-icon">
+            <img src="images/robot-icon.png" alt="AI Assistant Robot Icon" class="robot-img">
+        </div>
+    </header>
+
+    <!-- Main Banner / Hero Section -->
+    <section class="hero-section">
+        <div class="hero-content">
+            <h1>Join VinFast<br>Drive Your <span>Career</span> Forward</h1>
+            <p>Be part of a global movement towards a greener and smarter future. Submit your application and let's
+                shape what's next, together.</p>
+        </div>
+    </section>
+
+    <!-- Progress Steps Bar -->
+    <div class="progress-bar-container">
+        <div class="step active"><span class="step-num">1</span> Personal Details</div>
+        <div class="step-line"></div>
+        <div class="step"><span class="step-num">2</span> Contact Details</div>
+        <div class="step-line"></div>
+        <div class="step"><span class="step-num">3</span> Skills & Experience</div>
+        <div class="step-line"></div>
+        <div class="step"><span class="step-num">4</span> Upload & Submit</div>
+    </div>
+
+    <!-- Main Content Area: Form & Sidebar Layout -->
+    <main class="main-container">
+
+        <!-- Main Form Section -->
+        <section class="form-section">
+            <form action="https://mercury.swin.edu.au/it000000/formtest.php" method="post" id="applyForm">
+
+                <!-- Section 1: Position & Personal Details -->
+                <fieldset class="form-block">
+                    <legend class="block-header">
+                        <span class="block-num">1</span> Position and Personal Details
+                    </legend>
+                    <p class="block-subtext">Let us know who you are and the position you're applying for.</p>
+
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="jobRef">Job Reference Number <span class="required">*</span></label>
+                            <input type="text" id="jobRef" name="jobRef" required pattern="[A-Za-z0-9]{5}" maxlength="5"
+                                placeholder="e.g. VF001">
+                            <small>Exactly 5 alphanumeric characters (e.g. VF001)</small>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="firstName">First Name <span class="required">*</span></label>
+                            <input type="text" id="firstName" name="firstName" required pattern="[A-Za-z\s]{1,20}"
+                                maxlength="20" placeholder="e.g. Khanh">
+                            <small>Maximum 20 letters (A–Z)</small>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="lastName">Last Name <span class="required">*</span></label>
+                            <input type="text" id="lastName" name="lastName" required pattern="[A-Za-z\s]{1,20}"
+                                maxlength="20" placeholder="e.g. Quynh">
+                            <small>Maximum 20 letters (A–Z)</small>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="dob">Date of Birth <span class="required">*</span></label>
+                            <input type="text" id="dob" name="dob" required pattern="\d{2}/\d{2}/\d{4}"
+                                placeholder="dd/mm/yyyy">
+                            <small>Format: dd/mm/yyyy</small>
+                        </div>
+
+                        <div class="form-group full-width">
+                            <fieldset class="gender-fieldset">
+                                <legend>Gender <span class="required">*</span></legend>
+                                <div class="radio-group">
+                                    <label><input type="radio" name="gender" value="Female" required> Female</label>
+                                    <label><input type="radio" name="gender" value="Male"> Male</label>
+                                    <label><input type="radio" name="gender" value="Non-binary"> Non-binary</label>
+                                    <label><input type="radio" name="gender" value="Prefer not to say"> Prefer not to
+                                        say</label>
+                                </div>
+                            </fieldset>
+                        </div>
+                    </div>
+                </fieldset>
+
+                <!-- Section 2: Contact Details -->
+                <fieldset class="form-block">
+                    <legend class="block-header">
+                        <span class="block-num">2</span> Contact Details
+                    </legend>
+                    <p class="block-subtext">Provide your current contact information.</p>
+
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="streetAddress">Street Address <span class="required">*</span></label>
+                            <input type="text" id="streetAddress" name="streetAddress" required maxlength="40"
+                                placeholder="e.g. 123 Nguyen Van Cu Street">
+                            <small>Maximum 40 characters</small>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="suburb">Suburb/Town <span class="required">*</span></label>
+                            <input type="text" id="suburb" name="suburb" required maxlength="40"
+                                placeholder="e.g. District 1">
+                            <small>Maximum 40 characters</small>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="state">State <span class="required">*</span></label>
+                            <select id="state" name="state" required>
+                                <option value="" disabled selected>Select a state</option>
+                                <option value="VIC">VIC</option>
+                                <option value="NSW">NSW</option>
+                                <option value="QLD">QLD</option>
+                                <option value="NT">NT</option>
+                                <option value="WA">WA</option>
+                                <option value="SA">SA</option>
+                                <option value="TAS">TAS</option>
+                                <option value="ACT">ACT</option>
+                            </select>
+                            <small>VIC, NSW, QLD, NT, WA, SA, TAS, ACT</small>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="postcode">Postcode <span class="required">*</span></label>
+                            <input type="text" id="postcode" name="postcode" required pattern="\d{4}" maxlength="4"
+                                placeholder="e.g. 3000">
+                            <small>Exactly 4 digits</small>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Phone Number <span class="required">*</span></label>
+                            <input type="tel" id="phone" name="phone" required pattern="\d{8,12}"
+                                placeholder="e.g. 0412345678">
+                            <small>8–12 digits (numbers only)</small>
+                        </div>
+
+                        <div class="form-group full-width">
+                            <label for="email">Email Address <span class="required">*</span></label>
+                            <input type="email" id="email" name="email" required placeholder="e.g. example@email.com">
+                        </div>
+                    </div>
+                </fieldset>
+
+                <!-- Section 3: Skills and Experience -->
+                <fieldset class="form-block">
+                    <legend class="block-header">
+                        <span class="block-num">3</span> Skills and Experience
+                    </legend>
+                    <p class="block-subtext">Select the skills that best match your experience.</p>
+
+                    <div class="form-group full-width">
+                        <label>Skill List <span class="required">*</span></label>
+                        <div class="checkbox-grid">
+                            <label><input type="checkbox" name="skills[]" value="HTML/CSS"> HTML / CSS</label>
+                            <label><input type="checkbox" name="skills[]" value="UI/UX Design"> UI/UX Design</label>
+                            <label><input type="checkbox" name="skills[]" value="Data Analysis"> Data Analysis</label>
+                            <label><input type="checkbox" name="skills[]" value="Project Management"> Project
+                                Management</label>
+                            <label><input type="checkbox" name="skills[]" value="Digital Marketing"> Digital
+                                Marketing</label>
+                            <label><input type="checkbox" name="skills[]" value="Customer Service"> Customer
+                                Service</label>
+                            <label><input type="checkbox" name="skills[]" value="E-commerce"> E-commerce</label>
+                            <label><input type="checkbox" name="skills[]" value="Other"> Other (please specify)</label>
+                        </div>
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label for="otherSkills">Other Skills (Optional)</label>
+                        <textarea id="otherSkills" name="otherSkills" maxlength="200" rows="4"
+                            placeholder="e.g. Languages, software tools, certifications, etc."></textarea>
+                        <small>Maximum 200 characters</small>
+                    </div>
+                </fieldset>
+
+                <!-- Section 4: Upload Supporting Documents -->
+                <fieldset class="form-block">
+                    <legend class="block-header">
+                        <span class="block-num">4</span> Upload Supporting Documents
+                    </legend>
+                    <p class="block-subtext">You can upload any relevant documents such as your CV, cover letter,
+                        portfolio or certificates.</p>
+
+                    <div class="file-upload-box">
+                        <input type="file" id="fileUpload" name="fileUpload" multiple class="file-input">
+                        <div class="upload-label">
+                            <span class="upload-icon">📁</span>
+                            <p><strong>Drag and drop files here</strong> or <span class="browse-link">click to
+                                    browse</span></p>
+                            <small>Accepted file types: PDF, DOC, DOCX, JPG, PNG | Maximum file size: 5 MB per
+                                file</small>
+                        </div>
+                    </div>
+                </fieldset>
+
+                <!-- Action Buttons -->
+                <div class="form-actions">
+                    <button type="reset" class="btn btn-reset">🔄 Reset Form</button>
+                    <button type="submit" class="btn btn-submit">✈️ Submit Application</button>
+                </div>
+
+            </form>
+        </section>
+
+        <!-- Sidebar Section -->
+        <aside class="sidebar">
+
+            <!-- Widget 1: Application Tips -->
+            <div class="card card-tips">
+                <h3>💡 Application Tips</h3>
+                <ul>
+                    <li>Make sure all required fields are completed.</li>
+                    <li>Use a valid email address and phone number.</li>
+                    <li>You can upload multiple files (e.g. CV, portfolio, cover letter, certificates).</li>
+                    <li>Accepted file types: PDF, DOC, DOCX, JPG, PNG.</li>
+                    <li>Maximum file size: 5 MB per file.</li>
+                </ul>
+            </div>
+
+            <!-- Widget 2: Security & Privacy -->
+            <div class="card card-security">
+                <h3>🛡️ Your Information is Secure</h3>
+                <p>Your personal information will only be used for recruitment purposes in accordance with our Privacy
+                    Policy.</p>
+            </div>
+
+            <!-- Widget 3: Need Help -->
+            <div class="card card-help">
+                <h3>🎧 Need Help?</h3>
+                <p>If you have any questions about the application process, please contact our recruitment team.</p>
+                <a href="mailto:careers@vinfast.com" class="email-link">✉️ careers@vinfast.com</a>
+            </div>
+
+            <!-- Widget 4: Application Timeline (Đã thêm mốc Application time theo vị trí chuẩn) -->
+            <div class="card card-timeline">
+                <h3>📅 Application Timeline</h3>
+                <ul class="timeline-list">
+                    <li class="timeline-item">
+                        <div class="timeline-badge blue">🚀</div>
+                        <div class="timeline-content">
+                            <strong>September 19, 2026</strong>
+                            <h4>Application opens</h4>
+                            <p>Start submitting your application.</p>
+                        </div>
+                    </li>
+                    <li class="timeline-item">
+                        <div class="timeline-badge purple">⏰</div>
+                        <div class="timeline-content">
+                            <strong>October 09, 2026</strong>
+                            <h4>Application deadline</h4>
+                            <p>You can no longer apply after this day.</p>
+                        </div>
+                    </li>
+
+                    <!-- Mốc Application time được chèn đúng vị trí trước 3 mốc sau -->
+                    <li class="timeline-item highlight">
+                        <div class="timeline-badge orange">⏳</div>
+                        <div class="timeline-content">
+                            <strong>October 20, 2026</strong>
+                            <h4>Application time</h4>
+                            <p>Applications are currently under review by our HR team.</p>
+                        </div>
+                    </li>
+
+                    <li class="timeline-item">
+                        <div class="timeline-badge teal">📝</div>
+                        <div class="timeline-content">
+                            <strong>November 01, 2026</strong>
+                            <h4>Shortlist announcement</h4>
+                            <p>You will be notified whether you are selected for an interview.</p>
+                        </div>
+                    </li>
+                    <li class="timeline-item">
+                        <div class="timeline-badge purple">👥</div>
+                        <div class="timeline-content">
+                            <strong>November 29, 2026</strong>
+                            <h4>Interview</h4>
+                            <p>Selected candidates will be invited to an interview.</p>
+                        </div>
+                    </li>
+                    <li class="timeline-item">
+                        <div class="timeline-badge gold">🏆</div>
+                        <div class="timeline-content">
+                            <strong>December 05, 2026</strong>
+                            <h4>Final results announcement</h4>
+                            <p>You will receive the final recruitment result.</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+        </aside>
+
+    </main>
+
+    <!-- Footer Area (Đầy đủ links theo rubric) -->
+    <footer class="main-footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <img src="images/logo.png" alt="Vinfast Logo" class="footer-logo">
+                <p>Move Forward Together<br>&copy; 2026 VinFast. All rights reserved.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="https://dovukhanhquynh.atlassian.net/jira/software/projects/SCRUM/boards/1/backlog"
+                            target="_blank">Jira Project</a></li>
+                    <li><a href="https://github.com/your-repo-link" target="_blank">GitHub Repository</a></li>
+                    <li><a href="mailto:info@vinfast.com">info@vinfast.com</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>
