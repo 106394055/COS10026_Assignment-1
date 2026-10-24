@@ -96,7 +96,7 @@ Candidates can explore the About page whenever they want to learn more about the
 
 ## Live Website
 
-GitHub Pages: (https://github.com/106394055/COS10026_Assignment-2)
+GitHub Pages: https://106394055.github.io/COS10026_Assignment-1/index.html
 
 ## Project Status
 
