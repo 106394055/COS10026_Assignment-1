@@ -1574,14 +1574,9 @@ html:has(.role-modal:target) {
 
 
 /* ==========================================
-   D. APPLICATION FORM STYLES (Trang Apply)
-   Code CSS riêng cho apply.html (Flexbox/Grid, form controls, timeline)
+   D. APPLICATION FORM STYLES 
    ========================================== */
-
-/* ==========================================================================
-
-TOKENS (:root) & BASE STYLES
-========================================================================== */
+/* TOKENS (:root) & BASE STYLES */
 :root {
     --color-primary: #0b5fff;
     --color-primary-dark: #0847c4;
@@ -1667,9 +1662,7 @@ main {
     top: 12px;
 }
 
-/* ==========================================================================
-2. HEADER & NAVIGATION
-========================================================================== */
+/* 2. HEADER & NAVIGATION */
 .site-header {
     background-color: transparent;
     color: var(--color-nav);
@@ -1728,9 +1721,7 @@ main {
     border-bottom-color: var(--color-primary);
 }
 
-/* ==========================================================================
-3. HERO BANNER
-========================================================================== */
+/* 3. HERO BANNER */
 .hero-banner {
     background: linear-gradient(135deg, #0a1f4d 0%, #0b5fff 100%);
     color: #ffffff;
@@ -1755,9 +1746,7 @@ main {
     margin: 0;
 }
 
-/* ==========================================================================
-4. APPLY PAGE - STEPPER & LAYOUT
-========================================================================== */
+/* 4. APPLY PAGE - STEPPER & LAYOUT */
 .main-container {
     margin-top: 12px;
 }
@@ -1820,9 +1809,7 @@ main {
     gap: 24px;
 }
 
-/* ==========================================================================
-5. FORM STYLES
-========================================================================== */
+/* 5. FORM STYLES */
 .form-section {
     background-color: var(--color-surface);
     border: 1px solid var(--color-border);
@@ -1996,9 +1983,7 @@ textarea:focus {
     background-color: var(--color-block);
 }
 
-/* ==========================================================================
-6. SIDEBAR CARDS & TIMELINE
-========================================================================== */
+/* 6. SIDEBAR CARDS & TIMELINE */
 .sidebar-column {
     display: flex;
     flex-direction: column;
@@ -2019,7 +2004,7 @@ textarea:focus {
     margin-bottom: 12px;
 }
 
-.card__header h3 {
+.card__header h2 {
     font-size: 0.95rem;
     font-weight: 700;
     color: var(--color-navy);
@@ -2089,11 +2074,11 @@ textarea:focus {
     margin-bottom: 16px;
 }
 
-.timeline-item.timeline-item--highlight {
-    background: #fff9e6;
+.timeline-item--highlight {
+    background: #e6f7ed;
     padding: 8px;
     border-radius: 8px;
-    border-left: 4px solid #ff9800;
+    border-left: 4px solid #10b981;
 }
 
 .timeline-badge {
@@ -2136,7 +2121,7 @@ textarea:focus {
     color: var(--color-muted);
 }
 
-.timeline-content h4 {
+.timeline-content h3 {
     font-size: 0.82rem;
     font-weight: 700;
     color: var(--color-navy);
@@ -2149,9 +2134,7 @@ textarea:focus {
     margin: 0;
 }
 
-/* ==========================================================================
-7. FLOATING VF CHATBOT WIDGET
-========================================================================== */
+/* 7. FLOATING VF CHATBOT WIDGET */
 .site-bot {
     position: fixed;
     right: 24px;
@@ -2243,9 +2226,7 @@ textarea:focus {
     background-color: var(--color-chip);
 }
 
-/* ==========================================================================
-8. FOOTER
-========================================================================== */
+/* 8. FOOTER */
 .site-footer {
     flex-shrink: 0;
     margin-top: auto;
@@ -2329,9 +2310,7 @@ textarea:focus {
     color: var(--color-surface);
 }
 
-/* ==========================================================================
-9. MEDIA QUERIES (MOBILE RESPONSIVE)
-========================================================================== */
+/* 9. MEDIA QUERIES (MOBILE RESPONSIVE) */
 @media (max-width: 900px) {
     .content-grid {
         grid-template-columns: 1fr;
@@ -2379,8 +2358,7 @@ textarea:focus {
 }
 
 /* ==========================================
-   E. ABOUT PAGE STYLES (Trang About)
-   Code CSS riêng cho about.html
+   E. ABOUT PAGE STYLES
    ========================================== */
 /* Typography & General Spacing */
 .about-section {
@@ -2631,11 +2609,9 @@ textarea:focus {
     margin-bottom: 0;
 }
 
-/* ==========================================
-   03 How We Work Section
-   ========================================== */
+/* 03 How We Work Section */
 
-/* --- 1. WORKFLOW STEPS (Căn giữa) --- */
+/* --- 1. WORKFLOW STEPS  --- */
 .workflow-steps {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -2732,9 +2708,7 @@ textarea:focus {
     line-height: 1.5;
 }
 
-/* ==========================================
-   04 Group Photo
-   ========================================== */
+/* 04 Group Photo */
 .group-photo-wrapper {
     max-width: 800px;
 
@@ -2809,9 +2783,7 @@ textarea:focus {
     border-bottom: none;
 }
 
-/* ==========================================
-   06 Acknowledgement Section
-   ========================================== */
+/* 06 Acknowledgement Section */
 #acknowledgement {
     background-color: var(--color-navy);
     color: var(--color-surface);
@@ -2844,7 +2816,6 @@ textarea:focus {
 
 /* ==========================================
    F. MEDIA QUERIES (RESPONSIVE MOBILE)
-   Chứa code co giãn màn hình cho tất cả các trang
    ========================================== */
 @media (max-width: 1100px) {
     .page-jobs .role-meta {
@@ -2920,7 +2891,6 @@ textarea:focus {
 }
 
 /* ---- F.2 Accessibility, Reduced Motion, and Print ---- */
-
 /* High-visibility 3px keyboard focus ring with 2px offset across all interactive elements */
 :focus-visible {
     outline: 3px solid var(--color-primary);
@@ -2963,7 +2933,6 @@ textarea:focus {
 
 /* Print stylesheet: hide interactive chrome and expand all role panels inline for paper output */
 @media print {
-
     .site-bot,
     .skip-link,
     .page-jobs .hero-slider__arrows,
@@ -3029,9 +2998,9 @@ textarea:focus {
             width: 100%;
         }
 
+        /* Hide standard header on small mobile to stack */
         .fun-facts-table thead {
             display: none;
-            /* Hide standard header on small mobile to stack */
         }
 
         .fun-facts-table tbody th {
