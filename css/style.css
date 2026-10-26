@@ -787,11 +787,9 @@ body {
 .job-icon {
     font-size: 20px;
     color: #0066ff;
-    margin-bottom: 8px;
+    margin-bottom: 10px;
     background-color: #e2edff;
     width: 36px;
-    height: 36px;
-    border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -811,7 +809,7 @@ body {
 }
 
 .salary-text {
-    font-weight: 1000;
+    font-weight: 700;
     color: #000000;
 }
 
