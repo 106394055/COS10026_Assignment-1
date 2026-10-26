@@ -156,6 +156,9 @@ dd {
 
 .site-brand__wordmark {
     margin-left: 2px;
+    font-family: "Gotham Bold", "Mulish", sans-serif;
+    letter-spacing: 2px;
+    font-weight: 1000;
 }
 
 /*Horizontal navigation menu */
@@ -516,22 +519,8 @@ dd {
    B. HOME PAGE STYLES (Trang Index)
    Code CSS riêng cho index.html
    ========================================== */
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
 body {
-    background-color: #f4f6f9;
-    color: #0b2545;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
     align-items: center;
-    padding: 20px;
 }
 
 /* HERO SECTION */
@@ -563,13 +552,13 @@ body {
 
 .home_hero-title {
     color: #0066ff;
-    font-size: 2.5rem;
+    font-size: 50px;
     font-weight: 700;
     margin-bottom: 5px;
 }
 
 .home_hero-subtitle {
-    color: #0d2c54;
+    color: #000000;
     font-size: 2.2rem;
     font-weight: 700;
 }
@@ -587,7 +576,7 @@ body {
     align-items: center;
     width: 100%;
     max-width: 650px;
-    border: 1px solid #dcdcdc;
+    border: 1px solid #ede6e6;
     border-radius: 30px;
     padding: 5px 6px 5px 18px;
     background-color: #ffffff;
@@ -1732,7 +1721,6 @@ main {
 .hero-content h1.hero-title {
     font-size: 2.2rem;
     font-weight: 800;
-    text-transform: uppercase;
     margin-bottom: 12px;
 }
 
