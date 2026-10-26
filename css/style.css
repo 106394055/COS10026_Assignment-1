@@ -2092,10 +2092,10 @@ textarea:focus {
 }
 
 .timeline-item.timeline-item--highlight {
-    background: #fff9e6;
+    background: #e6f7ed;
     padding: 8px;
     border-radius: 8px;
-    border-left: 4px solid #ff9800;
+    border-left: 4px solid #10b981;
 }
 
 .timeline-badge {
