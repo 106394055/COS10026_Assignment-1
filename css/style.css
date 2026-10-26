@@ -2091,7 +2091,7 @@ textarea:focus {
     margin-bottom: 16px;
 }
 
-.timeline-item.timeline-item--highlight {
+.timeline-item--highlight {
     background: #e6f7ed;
     padding: 8px;
     border-radius: 8px;
