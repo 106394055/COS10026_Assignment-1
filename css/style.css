@@ -2021,7 +2021,7 @@ textarea:focus {
     margin-bottom: 12px;
 }
 
-.card__header h3 {
+.card__header h2 {
     font-size: 0.95rem;
     font-weight: 700;
     color: var(--color-navy);
@@ -2138,7 +2138,7 @@ textarea:focus {
     color: var(--color-muted);
 }
 
-.timeline-content h4 {
+.timeline-content h3 {
     font-size: 0.82rem;
     font-weight: 700;
     color: var(--color-navy);
