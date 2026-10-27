@@ -2632,10 +2632,11 @@ textarea:focus {
 }
 
 .step__num {
-    color: var(--color-primary);
+    color: var(--color-navy);
     font-weight: 700;
     font-size: 1.1rem;
 }
+
 
 .step__title {
     font-size: 1.2rem;
