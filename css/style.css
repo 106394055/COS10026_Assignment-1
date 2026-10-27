@@ -520,213 +520,63 @@ dd {
    Code CSS riêng cho index.html
    ========================================== */
 
-/* 1. BASE / GENERAL STYLES */
-
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
-body {
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-    color: #111111;
-    background-color: #ffffff;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-/* Container Utility */
-.container {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-/* Accessibility: Skip Link */
-.skip-link {
-    position: absolute;
-    top: -40px;
-    left: 0;
-    background: #0066ff;
-    color: #ffffff;
-    padding: 8px;
-    z-index: 100;
-    transition: top 0.3s;
-}
-
-.skip-link:focus {
-    top: 0;
-}
-
-/* 2. HEADER & NAVIGATION */
-
-.site-header {
-    width: 100%;
-    background-color: #ffffff;
-    border-bottom: 1px solid #e1e8f0;
-    padding: 15px 0;
-}
-
-.site-header__inner {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.site-brand {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    text-decoration: none;
-}
-
-.site-brand__wordmark {
-    font-weight: 700;
-    font-size: 1.25rem;
-    color: #0d2c54;
-}
-
-.site-nav ul {
-    display: flex;
-    list-style: none;
-    gap: 24px;
-}
-
-.site-nav a {
-    text-decoration: none;
-    color: #111111;
-    font-weight: 600;
-    transition: color 0.2s ease;
-}
-
-.site-nav a:hover,
-.site-nav a[aria-current="page"] {
-    color: #0066ff;
-}
-
-/* 3. BOT / WIDGET */
-
-.site-bot {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    z-index: 99;
-}
-
-.site-bot__trigger {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    cursor: pointer;
-    list-style: none;
-    background: #ffffff;
-    padding: 6px 12px;
-    border-radius: 30px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-}
-
-.site-bot__badge {
-    font-weight: 700;
-    color: #0066ff;
-    font-size: 0.9rem;
-}
-
-.site-bot__panel {
-    position: absolute;
-    bottom: 60px;
-    right: 0;
-    width: 300px;
-    background-color: #ffffff;
-    border: 1px solid #e1e8f0;
-    border-radius: 12px;
-    padding: 16px;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
-}
-
-.site-bot__title {
-    font-weight: 700;
-    margin-bottom: 8px;
-    color: #0d2c54;
-}
-
-.site-bot__text {
-    font-size: 0.85rem;
-    color: #555555;
-    margin-bottom: 12px;
-    line-height: 1.4;
-}
-
-.site-bot__links {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-}
-
-.site-bot__links a {
-    font-size: 0.85rem;
-    color: #0066ff;
-    text-decoration: none;
-}
-
-.site-bot__links a:hover {
-    text-decoration: underline;
-}
-
-/* 4. HERO SECTION */
-
-.hero-section {
+/* 1. HERO SECTION */
+.page-home .hero-section {
     position: relative;
     width: 100%;
-    min-height: 450px;
+    /* Give enough height to display the full image nicely */
+    min-height: 520px; 
     display: flex;
+    /* Align content near the top instead of vertical center */
+    align-items: flex-start; 
     justify-content: center;
-    align-items: flex-start;
-    text-align: center;
-    padding-top: 30px;
+    /* Control exact distance from top edge into the clear sky */
+    padding-top: 60px; 
+    overflow: hidden;
 }
 
-.home_hero-background {
+.page-home .hero-background {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
-    z-index: -1;
+    z-index: 1;
 }
 
-.home_hero-content {
+.page-home .hero-content {
+    position: relative;
+    z-index: 2;
     text-align: center;
-    max-width: 500px;
+    max-width: 600px;
+    margin: 0 auto;
 }
 
-.home_hero-title {
-    color: #0066ff;
+.page-home .hero-title {
+    color: #0057ff;
     font-size: 50px;
     font-weight: 700;
-    margin-bottom: 5px;
+    text-align: center;
+    margin-bottom: 8px;
 }
 
-.home_hero-subtitle {
+.page-home .hero-subtitle {
     color: #000000;
     font-size: 2.2rem;
     font-weight: 700;
+    margin: 0;
 }
 
-/* 5. SEARCH SECTION */
-
-.search-section {
+/* 2. SEARCH SECTION */
+.page-home .search-section {
     width: 100%;
     display: flex;
     justify-content: center;
     padding: 40px 20px 20px 20px;
 }
 
-.search-box {
+.page-home .search-box {
     display: flex;
     align-items: center;
     width: 100%;
@@ -738,13 +588,13 @@ body {
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.05);
 }
 
-.search-icon {
+.page-home .search-icon {
     font-size: 1.1rem;
     color: #0066ff;
     margin-right: 10px;
 }
 
-.search-input {
+.page-home .search-input {
     border: none;
     outline: none;
     width: 100%;
@@ -752,11 +602,11 @@ body {
     color: #000000;
 }
 
-.search-input::placeholder {
+.page-home .search-input::placeholder {
     color: #999999;
 }
 
-.search-button {
+.page-home .search-button {
     background-color: #0057ff;
     color: #ffffff;
     border: none;
@@ -768,26 +618,25 @@ body {
     transition: background-color 0.2s ease;
 }
 
-.search-button:hover {
+.page-home .search-button:hover {
     background-color: #0056b3;
 }
 
-/* 6. STATS SECTION */
-
-.stats-section {
+/* 3. STATS SECTION */
+.page-home .stats-section {
     width: 100%;
     text-align: center;
     padding: 30px 20px 60px 20px;
 }
 
-.stats-title {
+.page-home .stats-title {
     color: #0d2c54;
     font-size: 2.2rem;
     font-weight: 700;
     margin-bottom: 40px;
 }
 
-.stats-grid {
+.page-home .stats-grid {
     display: flex;
     justify-content: center;
     align-items: flex-start;
@@ -796,36 +645,35 @@ body {
     margin: 0 auto;
 }
 
-.stat-card {
+.page-home .stat-card {
     display: flex;
     flex-direction: column;
     align-items: center;
     flex: 1;
 }
 
-.stat-icon {
+.page-home .stat-icon {
     width: 48px;
     height: 48px;
     object-fit: contain;
     margin-bottom: 12px;
 }
 
-.stat-number {
+.page-home .stat-number {
     color: #0066ff;
     font-size: 1.8rem;
     font-weight: 700;
     margin-bottom: 8px;
 }
 
-.stat-description {
+.page-home .stat-description {
     color: #111111;
     font-size: 1.05rem;
     line-height: 1.35;
 }
 
-/* 7. JOBS SECTION */
-
-.jobs-section {
+/* 4. JOBS SECTION */
+.page-home .jobs-section {
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -833,7 +681,7 @@ body {
     padding: 0 20px 60px 20px;
 }
 
-.job-table {
+.page-home .job-table {
     width: 100%;
     max-width: 900px;
     border-collapse: separate;
@@ -842,8 +690,7 @@ body {
 }
 
 /* Header Row */
-
-.job-header-row td {
+.page-home .job-header-row td {
     background-color: #11428f;
     color: #ffffff;
     padding: 14px 20px;
@@ -851,19 +698,19 @@ body {
     border-top-right-radius: 12px;
 }
 
-.job-header-content {
+.page-home .job-header-content {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.job-title-group {
+.page-home .job-title-group {
     display: flex;
     align-items: center;
     gap: 12px;
 }
 
-.badge {
+.page-home .badge {
     background-color: #dce7f9;
     color: #11428f;
     font-weight: 700;
@@ -872,13 +719,13 @@ body {
     border-radius: 20px;
 }
 
-.job-title {
+.page-home .job-title {
     font-size: 17px;
     font-weight: 700;
     letter-spacing: 0.2px;
 }
 
-.btn-apply {
+.page-home .btn-apply {
     background-color: #0066ff;
     color: #ffffff;
     text-decoration: none;
@@ -892,49 +739,46 @@ body {
     transition: background-color 0.2s ease;
 }
 
-.btn-apply:hover {
+.page-home .btn-apply:hover {
     background-color: #0052cc;
 }
 
 /* Details Row */
-
-.job-details-row td {
+.page-home .job-details-row td {
     background-color: #f1f5fa;
     padding: 25px 20px;
     vertical-align: middle;
     border-bottom: 1px solid #e1e8f0;
 }
 
-.job-details-row td:first-child {
+.page-home .job-details-row td:first-child {
     border-bottom-left-radius: 12px;
     border-left: 1px solid #e1e8f0;
 }
 
-.job-details-row td:last-child {
+.page-home .job-details-row td:last-child {
     border-bottom-right-radius: 12px;
     border-right: 1px solid #e1e8f0;
 }
 
 /* Columns */
-
-.col-location {
+.page-home .col-location {
     width: 30%;
     border-right: 1px solid #dbe3ed;
 }
 
-.col-salary {
+.page-home .col-salary {
     width: 32%;
     border-right: 1px solid #dbe3ed;
 }
 
-.col-tasks {
+.page-home .col-tasks {
     width: 38%;
     padding-left: 30px;
 }
 
 /* Info Box Inside Table Cells */
-
-.info-box {
+.page-home .info-box {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -942,7 +786,7 @@ body {
     text-align: center;
 }
 
-.job-icon {
+.page-home .job-icon {
     width: 36px;
     height: 36px;
     object-fit: contain;
@@ -951,93 +795,30 @@ body {
     padding: 6px;
 }
 
-.info-title {
+.page-home .info-title {
     font-size: 15px;
     font-weight: 700;
     color: #1a202c;
     margin-bottom: 4px;
 }
 
-.info-desc {
+.page-home .info-desc {
     font-size: 13px;
     color: #000000;
     line-height: 1.4;
 }
 
-.salary-text {
+.page-home .salary-text {
     font-weight: 700;
 }
 
-.time {
+.page-home .time {
     font-weight: 700;
 }
 
-.subtext {
+.page-home .subtext {
     font-weight: normal;
     color: #555555;
-}
-
-/* 8. FOOTER */
-
-.site-footer {
-    width: 100%;
-    background-color: #0d2c54;
-    color: #ffffff;
-    padding: 40px 0 20px 0;
-    margin-top: auto;
-}
-
-.site-footer__inner {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-.site-footer__brand {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-}
-
-.site-footer__tagline {
-    font-size: 1rem;
-    color: #dce7f9;
-}
-
-.site-footer__ack {
-    font-size: 0.85rem;
-    color: #a0aec0;
-    line-height: 1.5;
-}
-
-.site-footer__ack a {
-    color: #63b3ed;
-    text-decoration: underline;
-}
-
-.site-footer__bottom {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-top: 1px solid #2d3748;
-    padding-top: 20px;
-    font-size: 0.85rem;
-    color: #a0aec0;
-}
-
-.site-footer__meta-links {
-    display: flex;
-    list-style: none;
-    gap: 16px;
-}
-
-.site-footer__meta-links a {
-    color: #ffffff;
-    text-decoration: none;
-}
-
-.site-footer__meta-links a:hover {
-    text-decoration: underline;
 }
 
 /* ==========================================
