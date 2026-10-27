@@ -10,13 +10,15 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
-    <!-- Direct CSS link as the CSS folder is on the same level -->
+    <!-- link css -->
     <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
-    <!-- Header -->
+    <!-- skip link for accessibility -->
     <a class="skip-link" href="#main">Skip to main content</a>
+
+    <!-- header -->
     <header class="site-header">
         <div class="container site-header__inner">
             <a class="site-brand" href="index.html">
@@ -26,7 +28,6 @@
             <nav class="site-nav" aria-label="Main">
                 <ul>
                     <li><a href="index.html">Home</a></li>
-                    <!-- Job.html file name uses a capital J according to the repo structure -->
                     <li><a href="job.html">Jobs</a></li>
                     <li><a href="apply.html">Apply</a></li>
                     <li><a href="about.html" aria-current="page">About</a></li>
@@ -35,10 +36,8 @@
         </div>
     </header>
 
-    <!-- Main Content: About Page -->
     <main id="main">
-
-        <!-- Hero Section -->
+        <!-- hero section -->
         <section class="about-hero">
             <div class="container about-hero__inner">
                 <div class="about-hero__content">
@@ -76,7 +75,7 @@
         </section>
 
         <div class="container">
-            <!-- 01 Group Information -->
+            <!-- section 1: group info -->
             <section class="about-section" id="group-info">
                 <h2 class="about-section__title">01 Group Information</h2>
                 <div class="info-grid">
@@ -109,7 +108,7 @@
                 </div>
             </section>
 
-            <!-- 02 Team Contributions & Quotes -->
+            <!-- section 2: team contributions -->
             <section class="about-section" id="team-contributions">
                 <h2 class="about-section__title">02 Team Contributions & Quotes</h2>
                 <p class="about-section__subtitle">What each of us built, in our own words.</p>
@@ -118,7 +117,6 @@
                     <!-- Quynh -->
                     <article class="team-card">
                         <div class="team-card__header">
-                            <!-- Image path points directly to the images folder -->
                             <img src="images/About/quynh.jpg"
                                 alt="Portrait of Do Vu Khanh Quynh smelling yellow daisies" class="team-card__img">
                             <h3 class="team-card__name">Đỗ Vũ Khánh Quỳnh</h3>
@@ -144,7 +142,6 @@
                     <!-- Khoi -->
                     <article class="team-card">
                         <div class="team-card__header">
-                            <!-- Khoi's image path -->
                             <img src="images/About/khoi.jpg"
                                 alt="Portrait of Duong Nguyen Khoi posing next to an astronaut standee"
                                 class="team-card__img">
@@ -167,7 +164,7 @@
                         </div>
                     </article>
 
-                    <!-- Thanh (Placeholder image, with real content) -->
+                    <!-- Thanh -->
                     <article class="team-card">
                         <div class="team-card__header">
                             <img src="images/About/thanh.png" alt="Portrait of Nguyen Nhat Thanh"
@@ -219,13 +216,12 @@
                 </div>
             </section>
 
-            <!-- 03 How We Work -->
+            <!-- section 3: how we work -->
             <section class="about-section" id="workflow">
                 <h2 class="about-section__title">03 How We Work</h2>
                 <p class="about-section__subtitle">From plan to published site.</p>
 
                 <div class="workflow-steps">
-                    <!-- Step 1 -->
                     <div class="step">
                         <div class="step__header">
                             <span class="step__num">1</span>
@@ -236,7 +232,6 @@
                         </div>
                     </div>
 
-                    <!-- Step 2 -->
                     <div class="step">
                         <div class="step__header">
                             <span class="step__num">2</span>
@@ -247,7 +242,6 @@
                         </div>
                     </div>
 
-                    <!-- Step 3 -->
                     <div class="step">
                         <div class="step__header">
                             <span class="step__num">3</span>
@@ -258,7 +252,6 @@
                         </div>
                     </div>
 
-                    <!-- Step 4 -->
                     <div class="step">
                         <div class="step__header">
                             <span class="step__num">4</span>
@@ -292,20 +285,19 @@
                 </div>
             </section>
 
-            <!-- 04 Group Photo -->
+            <!-- section 4: group photo -->
             <section class="about-section" id="group-photo">
                 <h2 class="about-section__title">04 Group Photo</h2>
                 <p class="about-section__subtitle">The team behind the site.</p>
                 <figure class="group-photo-wrapper">
-
+                    <!-- note: remember to update group-photo.jpg with our real photo -->
                     <img src="images/About/group-photo.jpg" alt="Group photo of Team HCPS members"
                         class="group-photo-img">
-                    <figcaption>Figure 1: Team HCPS - Swinburne HCMC Campus
-                    </figcaption>
+                    <figcaption>Figure 1: Team HCPS - Swinburne HCMC Campus</figcaption>
                 </figure>
             </section>
 
-            <!-- 05 Fun Facts -->
+            <!-- section 5: fun facts -->
             <section class="about-section" id="fun-facts">
                 <h2 class="about-section__title">05 Fun Facts</h2>
                 <div class="table-responsive">
@@ -343,33 +335,31 @@
                     </table>
                 </div>
             </section>
-            <!-- 06 Acknowledgement -->
+
+            <!-- section 6: acknowledgement -->
             <section class="about-section" id="acknowledgement">
                 <h2 class="about-section__title">Acknowledgement of Country</h2>
                 <div class="ack-content">
                     <p>We respectfully acknowledge the Wurundjeri People of the Kulin Nation, who are the Traditional
-                        Owners of the
-                        land on which Swinburne’s Australian campuses are located in Melbourne’s east and outer-east,
-                        and pay our
-                        respect to their Elders past, present and emerging.</p>
+                        Owners of the land on which Swinburne’s Australian campuses are located in Melbourne’s east and
+                        outer-east,
+                        and pay our respect to their Elders past, present and emerging.</p>
                     <p>We are honoured to recognise our connection to Wurundjeri Country, history, culture and
-                        spirituality through
-                        these locations, and strive to ensure that we operate in a manner that respects and honours the
-                        Elders and
-                        Ancestors of these lands.</p>
+                        spirituality through these locations, and strive to ensure that we operate in a manner that
+                        respects and honours the
+                        Elders and Ancestors of these lands.</p>
                     <p>We also respectfully acknowledge Swinburne’s Aboriginal and Torres Strait Islander staff,
-                        students, alumni,
-                        partners and visitors. We also acknowledge and respect the Traditional Owners of lands across
-                        Australia,
-                        their Elders, Ancestors, cultures and heritage, and recognise the continuing sovereignties of
-                        all Aboriginal
-                        and Torres Strait Islander Nations.</p>
+                        students, alumni, partners and visitors. We also acknowledge and respect the Traditional Owners
+                        of lands across
+                        Australia, their Elders, Ancestors, cultures and heritage, and recognise the continuing
+                        sovereignties of
+                        all Aboriginal and Torres Strait Islander Nations.</p>
                 </div>
             </section>
         </div>
     </main>
 
-    <!-- Bot -->
+    <!-- chatbot widget -->
     <div class="site-bot">
         <details class="site-bot__Widget">
             <summary class="site-bot__trigger">
@@ -389,7 +379,7 @@
         </details>
     </div>
 
-    <!-- Footer -->
+    <!-- footer area -->
     <footer class="site-footer">
         <div class="container site-footer__inner">
             <div class="site-footer__brand">

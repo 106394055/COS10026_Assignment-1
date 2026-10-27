@@ -2380,11 +2380,9 @@ textarea:focus {
     }
 }
 
-/* ==========================================
-   E. ABOUT PAGE STYLES (Trang About)
-   Code CSS riêng cho about.html
-   ========================================== */
-/* Typography & General Spacing */
+/* E. About Page Styles */
+
+/* typography and spacing */
 .about-section {
     margin-bottom: 64px;
 }
@@ -2404,7 +2402,7 @@ textarea:focus {
     margin-bottom: 24px;
 }
 
-/* Hero Section */
+/* hero section */
 .about-hero {
     background-color: var(--color-navy);
     color: var(--color-surface);
@@ -2494,7 +2492,7 @@ textarea:focus {
     margin-left: 0;
 }
 
-/* 01 Group Information */
+/* group info grid */
 .info-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -2532,7 +2530,7 @@ textarea:focus {
     color: var(--color-text);
 }
 
-/* 02 Team Contributions */
+/* team contributions */
 .team-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -2633,11 +2631,7 @@ textarea:focus {
     margin-bottom: 0;
 }
 
-/* ==========================================
-   03 How We Work Section
-   ========================================== */
-
-/* --- 1. WORKFLOW STEPS (Căn giữa) --- */
+/* workflow steps */
 .workflow-steps {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -2651,7 +2645,6 @@ textarea:focus {
     border-top: 4px solid var(--color-primary);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
     padding: 24px 20px;
-
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -2687,7 +2680,7 @@ textarea:focus {
     color: var(--color-muted);
 }
 
-
+/* tools cards */
 .tools-title {
     font-size: 1.5rem;
     color: var(--color-navy);
@@ -2734,14 +2727,10 @@ textarea:focus {
     line-height: 1.5;
 }
 
-/* ==========================================
-   04 Group Photo
-   ========================================== */
+/* group photo */
 .group-photo-wrapper {
     max-width: 800px;
-
     margin: 0 auto;
-
     background-color: var(--color-surface);
     padding: 16px;
     border-radius: 12px;
@@ -2764,7 +2753,7 @@ textarea:focus {
     font-size: 0.9rem;
 }
 
-/* 05 Fun Facts Table (Accessible) */
+/* fun facts table */
 .table-responsive {
     overflow-x: auto;
 }
@@ -2811,9 +2800,7 @@ textarea:focus {
     border-bottom: none;
 }
 
-/* ==========================================
-   06 Acknowledgement Section
-   ========================================== */
+/* acknowledgement */
 #acknowledgement {
     background-color: var(--color-navy);
     color: var(--color-surface);
@@ -2844,23 +2831,20 @@ textarea:focus {
 }
 
 
-/* ==========================================
-   F. MEDIA QUERIES (RESPONSIVE MOBILE)
-   Chứa code co giãn màn hình cho tất cả các trang
-   ========================================== */
+/* F. Media Queries */
 @media (max-width: 1100px) {
     .page-jobs .role-meta {
         grid-template-columns: repeat(3, minmax(0, 1fr));
     }
 }
 
-/* Tablet breakpoint: stack hero, un-float scam aside, and collapse multi-column grids */
+/* tablet breakpoint */
 @media (max-width: 900px) {
     .page-jobs .hero__grid {
         grid-template-columns: 1fr;
     }
 
-    /* Aside un-floats and drops below the panels and CTA button */
+    /* reset aside */
     .page-jobs .overview {
         display: flex;
         flex-direction: column;
@@ -2890,7 +2874,7 @@ textarea:focus {
     }
 }
 
-/* Mobile breakpoint: single-column metadata, full-width buttons, and full-screen modal sheet */
+/* mobile breakpoint */
 @media (max-width: 600px) {
     .page-jobs .role-meta {
         grid-template-columns: 1fr;
@@ -2905,7 +2889,7 @@ textarea:focus {
         padding: 18px 16px;
     }
 
-    /* Pop-up becomes a full-screen sheet on phones */
+    /* full screen modal on mobile */
     .page-jobs .role-modal {
         padding: 0;
     }
@@ -2921,28 +2905,23 @@ textarea:focus {
     }
 }
 
-/* ---- F.2 Accessibility, Reduced Motion, and Print ---- */
-
-/* High-visibility 3px keyboard focus ring with 2px offset across all interactive elements */
+/* accessibility and print */
 :focus-visible {
     outline: 3px solid var(--color-primary);
     outline-offset: 2px;
 }
 
-/* Show focus outline on the hero slideshow when keyboard navigating radio inputs */
 .page-jobs .hero-slider:has(.hero-slider__radio:focus-visible) {
     outline: 3px solid var(--color-primary);
     outline-offset: 2px;
 }
 
-/* Switch focus ring to white on dark navy surfaces to preserve contrast */
 .site-footer :focus-visible,
 .page-jobs .how-to :focus-visible,
 .page-jobs .role-modal__footer :focus-visible {
     outline-color: var(--color-surface);
 }
 
-/* Respect user OS preference for reduced motion by disabling smooth scroll and animations */
 @media (prefers-reduced-motion: reduce) {
     html {
         scroll-behavior: auto;
@@ -2963,7 +2942,7 @@ textarea:focus {
     }
 }
 
-/* Print stylesheet: hide interactive chrome and expand all role panels inline for paper output */
+/* print styles */
 @media print {
 
     .site-bot,
@@ -2979,7 +2958,6 @@ textarea:focus {
         background: none;
     }
 
-    /* Print every role in full instead of hiding it behind a pop-up */
     .page-jobs .role-modal {
         display: block;
         position: static;
@@ -3031,9 +3009,9 @@ textarea:focus {
             width: 100%;
         }
 
+        /* hide table header on mobile */
         .fun-facts-table thead {
             display: none;
-            /* Hide standard header on small mobile to stack */
         }
 
         .fun-facts-table tbody th {
