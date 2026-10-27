@@ -156,6 +156,9 @@ dd {
 
 .site-brand__wordmark {
     margin-left: 2px;
+    font-family: "Gotham Bold", "Mulish", sans-serif;
+    letter-spacing: 2px;
+    font-weight: 1000;
 }
 
 /*Horizontal navigation menu */
@@ -516,22 +519,8 @@ dd {
    B. HOME PAGE STYLES (Trang Index)
    Code CSS riêng cho index.html
    ========================================== */
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
 body {
-    background-color: #f4f6f9;
-    color: #0b2545;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
     align-items: center;
-    padding: 20px;
 }
 
 /* HERO SECTION */
@@ -563,13 +552,13 @@ body {
 
 .home_hero-title {
     color: #0066ff;
-    font-size: 2.5rem;
+    font-size: 50px;
     font-weight: 700;
     margin-bottom: 5px;
 }
 
 .home_hero-subtitle {
-    color: #0d2c54;
+    color: #000000;
     font-size: 2.2rem;
     font-weight: 700;
 }
@@ -587,7 +576,7 @@ body {
     align-items: center;
     width: 100%;
     max-width: 650px;
-    border: 1px solid #dcdcdc;
+    border: 1px solid #ede6e6;
     border-radius: 30px;
     padding: 5px 6px 5px 18px;
     background-color: #ffffff;
@@ -787,11 +776,9 @@ body {
 .job-icon {
     font-size: 20px;
     color: #0066ff;
-    margin-bottom: 8px;
+    margin-bottom: 10px;
     background-color: #e2edff;
     width: 36px;
-    height: 36px;
-    border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -811,7 +798,7 @@ body {
 }
 
 .salary-text {
-    font-weight: 1000;
+    font-weight: 700;
     color: #000000;
 }
 
@@ -1576,14 +1563,9 @@ html:has(.role-modal:target) {
 
 
 /* ==========================================
-   D. APPLICATION FORM STYLES (Trang Apply)
-   Code CSS riêng cho apply.html (Flexbox/Grid, form controls, timeline)
+   D. APPLICATION FORM STYLES 
    ========================================== */
-
-/* ==========================================================================
-
-TOKENS (:root) & BASE STYLES
-========================================================================== */
+/* TOKENS (:root) & BASE STYLES */
 :root {
     --color-primary: #0b5fff;
     --color-primary-dark: #0847c4;
@@ -1669,9 +1651,7 @@ main {
     top: 12px;
 }
 
-/* ==========================================================================
-2. HEADER & NAVIGATION
-========================================================================== */
+/* 2. HEADER & NAVIGATION */
 .site-header {
     background-color: transparent;
     color: var(--color-nav);
@@ -1730,9 +1710,7 @@ main {
     border-bottom-color: var(--color-primary);
 }
 
-/* ==========================================================================
-3. HERO BANNER
-========================================================================== */
+/* 3. HERO BANNER */
 .hero-banner {
     background: linear-gradient(135deg, #0a1f4d 0%, #0b5fff 100%);
     color: #ffffff;
@@ -1743,7 +1721,6 @@ main {
 .hero-content h1.hero-title {
     font-size: 2.2rem;
     font-weight: 800;
-    text-transform: uppercase;
     margin-bottom: 12px;
 }
 
@@ -1757,9 +1734,7 @@ main {
     margin: 0;
 }
 
-/* ==========================================================================
-4. APPLY PAGE - STEPPER & LAYOUT
-========================================================================== */
+/* 4. APPLY PAGE - STEPPER & LAYOUT */
 .main-container {
     margin-top: 12px;
 }
@@ -1822,9 +1797,7 @@ main {
     gap: 24px;
 }
 
-/* ==========================================================================
-5. FORM STYLES
-========================================================================== */
+/* 5. FORM STYLES */
 .form-section {
     background-color: var(--color-surface);
     border: 1px solid var(--color-border);
@@ -1998,9 +1971,7 @@ textarea:focus {
     background-color: var(--color-block);
 }
 
-/* ==========================================================================
-6. SIDEBAR CARDS & TIMELINE
-========================================================================== */
+/* 6. SIDEBAR CARDS & TIMELINE */
 .sidebar-column {
     display: flex;
     flex-direction: column;
@@ -2021,7 +1992,7 @@ textarea:focus {
     margin-bottom: 12px;
 }
 
-.card__header h3 {
+.card__header h2 {
     font-size: 0.95rem;
     font-weight: 700;
     color: var(--color-navy);
@@ -2091,11 +2062,11 @@ textarea:focus {
     margin-bottom: 16px;
 }
 
-.timeline-item.timeline-item--highlight {
-    background: #fff9e6;
+.timeline-item--highlight {
+    background: #e6f7ed;
     padding: 8px;
     border-radius: 8px;
-    border-left: 4px solid #ff9800;
+    border-left: 4px solid #10b981;
 }
 
 .timeline-badge {
@@ -2138,7 +2109,7 @@ textarea:focus {
     color: var(--color-muted);
 }
 
-.timeline-content h4 {
+.timeline-content h3 {
     font-size: 0.82rem;
     font-weight: 700;
     color: var(--color-navy);
@@ -2151,9 +2122,7 @@ textarea:focus {
     margin: 0;
 }
 
-/* ==========================================================================
-7. FLOATING VF CHATBOT WIDGET
-========================================================================== */
+/* 7. FLOATING VF CHATBOT WIDGET */
 .site-bot {
     position: fixed;
     right: 24px;
@@ -2245,9 +2214,7 @@ textarea:focus {
     background-color: var(--color-chip);
 }
 
-/* ==========================================================================
-8. FOOTER
-========================================================================== */
+/* 8. FOOTER */
 .site-footer {
     flex-shrink: 0;
     margin-top: auto;
@@ -2331,9 +2298,7 @@ textarea:focus {
     color: var(--color-surface);
 }
 
-/* ==========================================================================
-9. MEDIA QUERIES (MOBILE RESPONSIVE)
-========================================================================== */
+/* 9. MEDIA QUERIES (MOBILE RESPONSIVE) */
 @media (max-width: 900px) {
     .content-grid {
         grid-template-columns: 1fr;
@@ -2383,6 +2348,10 @@ textarea:focus {
 /* E. About Page Styles */
 
 /* typography and spacing */
+/* ==========================================
+   E. ABOUT PAGE STYLES
+   ========================================== */
+/* Typography & General Spacing */
 .about-section {
     margin-bottom: 64px;
 }
@@ -2632,6 +2601,9 @@ textarea:focus {
 }
 
 /* workflow steps */
+/* 03 How We Work Section */
+
+/* --- 1. WORKFLOW STEPS  --- */
 .workflow-steps {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -2728,6 +2700,7 @@ textarea:focus {
 }
 
 /* group photo */
+/* 04 Group Photo */
 .group-photo-wrapper {
     max-width: 800px;
     margin: 0 auto;
@@ -2801,6 +2774,7 @@ textarea:focus {
 }
 
 /* acknowledgement */
+/* 06 Acknowledgement Section */
 #acknowledgement {
     background-color: var(--color-navy);
     color: var(--color-surface);
@@ -2832,6 +2806,9 @@ textarea:focus {
 
 
 /* F. Media Queries */
+/* ==========================================
+   F. MEDIA QUERIES (RESPONSIVE MOBILE)
+   ========================================== */
 @media (max-width: 1100px) {
     .page-jobs .role-meta {
         grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -2906,6 +2883,8 @@ textarea:focus {
 }
 
 /* accessibility and print */
+/* ---- F.2 Accessibility, Reduced Motion, and Print ---- */
+/* High-visibility 3px keyboard focus ring with 2px offset across all interactive elements */
 :focus-visible {
     outline: 3px solid var(--color-primary);
     outline-offset: 2px;
@@ -3010,6 +2989,7 @@ textarea:focus {
         }
 
         /* hide table header on mobile */
+        /* Hide standard header on small mobile to stack */
         .fun-facts-table thead {
             display: none;
         }
