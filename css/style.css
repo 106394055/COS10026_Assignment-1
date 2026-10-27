@@ -516,14 +516,168 @@ dd {
 
 
 /* ==========================================
-   B. HOME PAGE STYLES (Trang Index)
+   B. HOME PAGE STYLES
    Code CSS riêng cho index.html
    ========================================== */
+
+/* 1. BASE / GENERAL STYLES */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
 body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    color: #111111;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
     align-items: center;
 }
 
-/* HERO SECTION */
+/* Container Utility */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Accessibility: Skip Link */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: #0066ff;
+    color: #ffffff;
+    padding: 8px;
+    z-index: 100;
+    transition: top 0.3s;
+}
+
+.skip-link:focus {
+    top: 0;
+}
+
+/* 2. HEADER & NAVIGATION */
+
+.site-header {
+    width: 100%;
+    background-color: #ffffff;
+    border-bottom: 1px solid #e1e8f0;
+    padding: 15px 0;
+}
+
+.site-header__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.site-brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+}
+
+.site-brand__wordmark {
+    font-weight: 700;
+    font-size: 1.25rem;
+    color: #0d2c54;
+}
+
+.site-nav ul {
+    display: flex;
+    list-style: none;
+    gap: 24px;
+}
+
+.site-nav a {
+    text-decoration: none;
+    color: #111111;
+    font-weight: 600;
+    transition: color 0.2s ease;
+}
+
+.site-nav a:hover,
+.site-nav a[aria-current="page"] {
+    color: #0066ff;
+}
+
+/* 3. BOT / WIDGET */
+
+.site-bot {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 99;
+}
+
+.site-bot__trigger {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    list-style: none;
+    background: #ffffff;
+    padding: 6px 12px;
+    border-radius: 30px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.site-bot__badge {
+    font-weight: 700;
+    color: #0066ff;
+    font-size: 0.9rem;
+}
+
+.site-bot__panel {
+    position: absolute;
+    bottom: 60px;
+    right: 0;
+    width: 300px;
+    background-color: #ffffff;
+    border: 1px solid #e1e8f0;
+    border-radius: 12px;
+    padding: 16px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.site-bot__title {
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: #0d2c54;
+}
+
+.site-bot__text {
+    font-size: 0.85rem;
+    color: #555555;
+    margin-bottom: 12px;
+    line-height: 1.4;
+}
+
+.site-bot__links {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.site-bot__links a {
+    font-size: 0.85rem;
+    color: #0066ff;
+    text-decoration: none;
+}
+
+.site-bot__links a:hover {
+    text-decoration: underline;
+}
+
+/* 4. HERO SECTION */
+
 .hero-section {
     position: relative;
     width: 100%;
@@ -563,7 +717,8 @@ body {
     font-weight: 700;
 }
 
-/* SEARCH SECTION */
+/* 5. SEARCH SECTION */
+
 .search-section {
     width: 100%;
     display: flex;
@@ -594,7 +749,7 @@ body {
     outline: none;
     width: 100%;
     font-size: 1rem;
-    color: #555555;
+    color: #000000;
 }
 
 .search-input::placeholder {
@@ -602,7 +757,7 @@ body {
 }
 
 .search-button {
-    background-color: #007bff;
+    background-color: #0057ff;
     color: #ffffff;
     border: none;
     padding: 10px 28px;
@@ -617,7 +772,8 @@ body {
     background-color: #0056b3;
 }
 
-/* STATS SECTION */
+/* 6. STATS SECTION */
+
 .stats-section {
     width: 100%;
     text-align: center;
@@ -667,16 +823,26 @@ body {
     line-height: 1.35;
 }
 
-/* JOB TABLE SECTION */
+/* 7. JOBS SECTION */
+
+.jobs-section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 20px 60px 20px;
+}
+
 .job-table {
     width: 100%;
     max-width: 900px;
     border-collapse: separate;
-    border-spacing: 0 15px;
+    border-spacing: 0;
     margin-top: 20px;
 }
 
 /* Header Row */
+
 .job-header-row td {
     background-color: #11428f;
     color: #ffffff;
@@ -731,6 +897,7 @@ body {
 }
 
 /* Details Row */
+
 .job-details-row td {
     background-color: #f1f5fa;
     padding: 25px 20px;
@@ -748,7 +915,8 @@ body {
     border-right: 1px solid #e1e8f0;
 }
 
-/* Column Widths */
+/* Columns */
+
 .col-location {
     width: 30%;
     border-right: 1px solid #dbe3ed;
@@ -764,7 +932,8 @@ body {
     padding-left: 30px;
 }
 
-/* Info Box */
+/* Info Box Inside Table Cells */
+
 .info-box {
     display: flex;
     flex-direction: column;
@@ -774,14 +943,12 @@ body {
 }
 
 .job-icon {
-    font-size: 20px;
-    color: #0066ff;
+    width: 36px;
+    height: 36px;
+    object-fit: contain;
     margin-bottom: 10px;
     background-color: #e2edff;
-    width: 36px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    padding: 6px;
 }
 
 .info-title {
@@ -799,9 +966,79 @@ body {
 
 .salary-text {
     font-weight: 700;
-    color: #000000;
 }
 
+.time {
+    font-weight: 700;
+}
+
+.subtext {
+    font-weight: normal;
+    color: #555555;
+}
+
+/* 8. FOOTER */
+
+.site-footer {
+    width: 100%;
+    background-color: #0d2c54;
+    color: #ffffff;
+    padding: 40px 0 20px 0;
+    margin-top: auto;
+}
+
+.site-footer__inner {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.site-footer__brand {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.site-footer__tagline {
+    font-size: 1rem;
+    color: #dce7f9;
+}
+
+.site-footer__ack {
+    font-size: 0.85rem;
+    color: #a0aec0;
+    line-height: 1.5;
+}
+
+.site-footer__ack a {
+    color: #63b3ed;
+    text-decoration: underline;
+}
+
+.site-footer__bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #2d3748;
+    padding-top: 20px;
+    font-size: 0.85rem;
+    color: #a0aec0;
+}
+
+.site-footer__meta-links {
+    display: flex;
+    list-style: none;
+    gap: 16px;
+}
+
+.site-footer__meta-links a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.site-footer__meta-links a:hover {
+    text-decoration: underline;
+}
 
 /* ==========================================
    C. JOB LISTINGS STYLES (Trang Jobs)
