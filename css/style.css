@@ -678,7 +678,7 @@ dd {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 0 20px 60px 20px;
+    padding: 0 20px 0px 20px;
 }
 
 .page-home .job-table {
@@ -824,36 +824,35 @@ dd {
 /* 5. CAREER BANNER */
 
 /* Outer banner container covering full horizontal width */
-.career-banner {
+.page-home .banner {
   position: relative;
   width: 100%;
-  height: 360px;
+  height: 600px;
   overflow: hidden;
   display: flex;
   align-items: center;
 }
 
-/* Background image wrapper class */
-.banner-bg {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 1;
+/* Background image wrapper */
+.page-home .banner-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
 }
 
-/* <img> tag styling to make it cover full banner area seamlessly */
-.banner-bg-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center center;
-  display: block;
+/* Ensure image fills the container and stays centered */
+.page-home .banner-bg-center {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
 }
 
 /* Banner content overlaid on top of the image */
-.banner-content {
+.page-home .banner-content {
   position: relative;
   z-index: 2;
   width: 100%;
@@ -863,7 +862,7 @@ dd {
 }
 
 /* Heading styling */
-.banner-heading {
+.page-home .banner-heading {
   font-size: 35px;
   font-weight: 700;
   line-height: 1;
@@ -872,7 +871,7 @@ dd {
 }
 
 /* Subtext styling */
-.banner-subtext {
+.page-home .banner-subtext {
   font-size: 16px;
   font-weight: 400;
   line-height: 1.4;
@@ -881,7 +880,7 @@ dd {
 }
 
 /* Apply Now button styling */
-.banner-btn {
+.page-home .banner-btn {
   display: inline-flex;
   align-items: center;
   gap: 12px;
@@ -898,7 +897,7 @@ dd {
   transition: all 0.3s ease;
 }
 
-.banner-btn:hover {
+.page-home .banner-btn:hover {
   background-color: #0052cc;
   box-shadow: 0 6px 20px rgba(0, 102, 255, 0.6);
   transform: translateY(-2px);
