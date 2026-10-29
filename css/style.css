@@ -1677,7 +1677,7 @@ html:has(.role-modal:target) {
     --color-border: #dbe6f5;
     --color-chip: #e3edff;
     --color-text: #333333;
-    --color-muted: #253342;
+    --color-muted: #0f172a;
     --bg-top: #e8f1ff;
     --bg-bottom: #ffffff;
 }
@@ -1935,7 +1935,7 @@ main {
 .section-header__desc {
     margin-left: auto;
     font-size: 0.80rem;
-    color: #1e293b;
+    color:#0f172a;
     font-weight: 500;
 }
 
@@ -2008,7 +2008,7 @@ textarea:focus {
 
 .field-hint {
     font-size: 0.75rem;
-    color: #1e293b;
+    color: #0f172a;
     font-weight: 500;
 }
 
@@ -2209,7 +2209,7 @@ textarea:focus {
 .timeline-content .date {
     font-size: 0.72rem;
     font-weight: 700;
-    color: var(--color-muted);
+    color: #0f172a;
 }
 
 .timeline-content h3 {
