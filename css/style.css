@@ -531,7 +531,7 @@ dd {
     align-items: flex-start; 
     justify-content: center;
     /* Control exact distance from top edge into the clear sky */
-    padding-top: 60px; 
+    padding-top: 40px; 
     overflow: hidden;
 }
 
@@ -547,10 +547,10 @@ dd {
 
 .page-home .hero-content {
     position: relative;
-    z-index: 2;
     text-align: center;
     max-width: 600px;
     margin: 0 auto;
+    z-index: 2;
 }
 
 .page-home .hero-title {
@@ -558,14 +558,16 @@ dd {
     font-size: 50px;
     font-weight: 700;
     text-align: center;
-    margin-bottom: 8px;
+    margin-bottom: 0 0 5px 0;
+    line-height: 1;
 }
 
 .page-home .hero-subtitle {
     color: #000000;
-    font-size: 2.2rem;
+    font-size: 35px;
     font-weight: 700;
     margin: 0;
+    line-height: 1;
 }
 
 /* 2. SEARCH SECTION */
@@ -580,25 +582,19 @@ dd {
     display: flex;
     align-items: center;
     width: 100%;
-    max-width: 650px;
+    max-width: 500px;
     border: 1px solid #ede6e6;
     border-radius: 30px;
     padding: 5px 6px 5px 18px;
     background-color: #ffffff;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.05);
-}
-
-.page-home .search-icon {
-    font-size: 1.1rem;
-    color: #0066ff;
-    margin-right: 10px;
+    box-shadow: 0px 4px 10px #d4d0d0;
 }
 
 .page-home .search-input {
     border: none;
     outline: none;
     width: 100%;
-    font-size: 1rem;
+    font-size: 16px;
     color: #000000;
 }
 
@@ -612,7 +608,7 @@ dd {
     border: none;
     padding: 10px 28px;
     border-radius: 20px;
-    font-size: 0.95rem;
+    font-size: 15px;
     font-weight: 600;
     cursor: pointer;
     transition: background-color 0.2s ease;
@@ -631,9 +627,9 @@ dd {
 
 .page-home .stats-title {
     color: #0d2c54;
-    font-size: 2.2rem;
+    font-size: 35px;
     font-weight: 700;
-    margin-bottom: 40px;
+    margin-bottom: 30px;
 }
 
 .page-home .stats-grid {
@@ -653,22 +649,21 @@ dd {
 }
 
 .page-home .stat-icon {
-    width: 48px;
-    height: 48px;
+    width: 20%;
     object-fit: contain;
     margin-bottom: 12px;
 }
 
 .page-home .stat-number {
     color: #0066ff;
-    font-size: 1.8rem;
+    font-size: 30px;
     font-weight: 700;
     margin-bottom: 8px;
 }
 
 .page-home .stat-description {
     color: #111111;
-    font-size: 1.05rem;
+    font-size: 17px;
     line-height: 1.35;
 }
 
@@ -686,7 +681,7 @@ dd {
     max-width: 900px;
     border-collapse: separate;
     border-spacing: 0;
-    margin-top: 20px;
+    margin-top: 10px;
 }
 
 /* Header Row */
@@ -795,30 +790,18 @@ dd {
     padding: 6px;
 }
 
-.page-home .info-title {
-    font-size: 17px;
-    font-weight: 700;
-    color: #1a202c;
-    margin-bottom: 4px;
-}
 
-.page-home .info-desc {
+.page-home .info-subtext {
     font-size: 17px;
     color: #000000;
     line-height: 1.4;
 }
 
-.page-home .salary-text {
+.page-home .info {
+    font-size: 17px;
+    color: #000000;
+    line-height: 1.4;
     font-weight: 700;
-}
-
-.page-home .time {
-    font-weight: 700;
-}
-
-.page-home .time-subtext {
-    font-weight: normal;
-    color: #555555;
 }
 
 /* 5. CAREER BANNER */
@@ -827,7 +810,7 @@ dd {
 .page-home .banner {
   position: relative;
   width: 100%;
-  height: 600px;
+  height: 580px;
   overflow: hidden;
   display: flex;
   align-items: center;
