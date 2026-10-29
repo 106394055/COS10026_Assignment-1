@@ -1,5 +1,5 @@
 /* ==========================================
-   A. GLOBAL & COMMON STYLES (Dùng chung cho cả nhóm)
+   A. GLOBAL & COMMON STYLES
    Header, Navigation, Footer, Colors, Fonts, Resets
    ========================================== 
    TABLE OF CONTENTS
@@ -1677,7 +1677,7 @@ html:has(.role-modal:target) {
     --color-border: #dbe6f5;
     --color-chip: #e3edff;
     --color-text: #333333;
-    --color-muted: #4a5a72;
+    --color-muted: #253342;
     --bg-top: #e8f1ff;
     --bg-bottom: #ffffff;
 }
@@ -1830,7 +1830,7 @@ main {
 
 .hero-content p {
     font-size: 0.95rem;
-    color: #cbd5e1;
+    color: #ffffff;
     margin: 0;
 }
 
@@ -1934,8 +1934,9 @@ main {
 
 .section-header__desc {
     margin-left: auto;
-    font-size: 0.75rem;
-    color: var(--color-muted);
+    font-size: 0.80rem;
+    color: #1e293b;
+    font-weight: 500;
 }
 
 .form-row {
@@ -2006,8 +2007,9 @@ textarea:focus {
 }
 
 .field-hint {
-    font-size: 0.72rem;
-    color: var(--color-muted);
+    font-size: 0.75rem;
+    color: #1e293b;
+    font-weight: 500;
 }
 
 .gender-fieldset,
@@ -2100,8 +2102,9 @@ textarea:focus {
 }
 
 .card--tips {
-    background-color: #fefce8;
-    border-color: #fef08a;
+    background-color: #fffde7;
+    border-color: #facc15;
+    color: #1e293b;
 }
 
 .card--security {
@@ -2445,9 +2448,6 @@ textarea:focus {
     }
 }
 
-/* E. About Page Styles */
-
-/* typography and spacing */
 /* ==========================================
    E. ABOUT PAGE STYLES
    ========================================== */
