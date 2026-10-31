@@ -887,8 +887,7 @@ dd {
 }
 
 /* ==========================================
-   C. JOB LISTINGS STYLES (Trang Jobs)
-   Code CSS riêng cho jobs.html
+   C. JOB LISTINGS STYLES (Job pages)
    ========================================== */
 .page-jobs .hero {
     padding-top: 40px;
@@ -945,233 +944,194 @@ dd {
     font-weight: 700;
 }
 
-.page-jobs .hero-slider {
+
+/* =========================================
+   JOB PAGE - CSS-ONLY HERO SLIDESHOW
+   ========================================= */
+
+/* Main slideshow container */
+.page-jobs .hero__media > .hero-slider {
     position: relative;
-    border-radius: 14px;
+    width: 100%;
     overflow: hidden;
+    border-radius: 14px;
     border: 1px solid var(--color-border);
     box-shadow: 0 10px 30px rgba(10, 31, 77, 0.15);
     background-color: var(--color-navy);
 }
 
-
-/* Group slideshow radio inputs without changing layout */
-.page-jobs .hero-slider__group {
-    border: 0;
-    margin: 0;
-    padding: 0;
-    min-width: 0;
-}
-
-/* Hide legend visually but retain it for screen readers */
-
-/* Visually hide the legend, but keep it accessible */
-.page-jobs .hero-slider__legend {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip-path: inset(50%);
-    white-space: nowrap;
-    border: 0;
-
-    /* Maintain readable contrast if evaluated */
-    color: #ffffff;
-}
-
-
-/* Hide radio inputs visually while keeping them accessible */
-.page-jobs .hero-slider__radio {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    margin: 0;
-    padding: 0;
-    opacity: 0;
-    pointer-events: none;
-}
-
-
-/* Show visible focus on the slideshow when a radio is focused */
-.page-jobs .hero-slider:has(
-    .hero-slider__radio:focus-visible
-) {
-    outline: 3px solid var(--color-primary);
-    outline-offset: 3px;
-}
-
-
-.page-jobs .hero-slider__viewport {
-    overflow: hidden;
-    width: 100%;
-}
-
-/* Horizontal flex track holding all 9 slides side by side */
-.page-jobs .hero-slider__track {
-    display: flex;
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    transition: transform 0.45s ease-in-out;
-}
-
-.page-jobs .hero-slider__slide {
-    flex: 0 0 100%;
-    width: 100%;
-}
-
-.page-jobs .hero-slider__slide img {
+/* Inner slideshow container */
+.page-jobs .hero-slider .hero-slider {
+    position: relative;
     width: 100%;
     aspect-ratio: 16 / 9;
-    object-fit: cover;
+}
+
+/* Hide all slides by default */
+.page-jobs .hero-slider_slide {
+    display: none;
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Display the first slide initially */
+.page-jobs .hero-slider_slide:first-child {
     display: block;
 }
 
-/* Shift track to match checked radio button (Slides 1 to 9) */
-.page-jobs #hero-s1:checked~.hero-slider__viewport .hero-slider__track {
-    transform: translateX(0%);
+/* Display the selected slide */
+.page-jobs .hero-slider_slide:target {
+    display: block;
 }
 
-.page-jobs #hero-s2:checked~.hero-slider__viewport .hero-slider__track {
-    transform: translateX(-100%);
-}
-
-.page-jobs #hero-s3:checked~.hero-slider__viewport .hero-slider__track {
-    transform: translateX(-200%);
-}
-
-.page-jobs #hero-s4:checked~.hero-slider__viewport .hero-slider__track {
-    transform: translateX(-300%);
-}
-
-.page-jobs #hero-s5:checked~.hero-slider__viewport .hero-slider__track {
-    transform: translateX(-400%);
-}
-
-.page-jobs #hero-s6:checked~.hero-slider__viewport .hero-slider__track {
-    transform: translateX(-500%);
-}
-
-.page-jobs #hero-s7:checked~.hero-slider__viewport .hero-slider__track {
-    transform: translateX(-600%);
-}
-
-.page-jobs #hero-s8:checked~.hero-slider__viewport .hero-slider__track {
-    transform: translateX(-700%);
-}
-
-.page-jobs #hero-s9:checked~.hero-slider__viewport .hero-slider__track {
-    transform: translateX(-800%);
-}
-
-/* Previous / Next arrow pairs: show only the pair for the active slide */
-.page-jobs .hero-slider__nav {
+/* Hide first slide when another is selected */
+.page-jobs .hero-slider:has(
+    > .hero-slider_slide:target
+) > .hero-slider_slide:first-child:not(:target) {
     display: none;
+}
+
+/* Slide images */
+.page-jobs .hero-slider_slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Previous and Next arrows */
+.page-jobs .hero-slider_slide > a {
     position: absolute;
     top: 50%;
-    left: 12px;
-    right: 12px;
     transform: translateY(-50%);
-    justify-content: space-between;
-    pointer-events: none;
-    z-index: 2;
-}
-
-.page-jobs #hero-s1:checked~.hero-slider__arrows .hero-slider__nav--1,
-.page-jobs #hero-s2:checked~.hero-slider__arrows .hero-slider__nav--2,
-.page-jobs #hero-s3:checked~.hero-slider__arrows .hero-slider__nav--3,
-.page-jobs #hero-s4:checked~.hero-slider__arrows .hero-slider__nav--4,
-.page-jobs #hero-s5:checked~.hero-slider__arrows .hero-slider__nav--5,
-.page-jobs #hero-s6:checked~.hero-slider__arrows .hero-slider__nav--6,
-.page-jobs #hero-s7:checked~.hero-slider__arrows .hero-slider__nav--7,
-.page-jobs #hero-s8:checked~.hero-slider__arrows .hero-slider__nav--8,
-.page-jobs #hero-s9:checked~.hero-slider__arrows .hero-slider__nav--9 {
-    display: flex;
-}
-
-.page-jobs .hero-slider__btn {
-    pointer-events: auto;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
 
     width: 44px;
     height: 44px;
-    padding: 0;
 
-    appearance: none;
-    -webkit-appearance: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
     background-color: rgba(10, 31, 77, 0.72);
-    color: var(--color-surface);
+    color: #ffffff;
+
     border: 2px solid rgba(255, 255, 255, 0.8);
     border-radius: 50%;
 
-    font-family: inherit;
+    text-decoration: none;
     font-size: 1.15rem;
     font-weight: 700;
-    line-height: 1;
-
     cursor: pointer;
-    user-select: none;
-    transition: background-color 0.15s ease, transform 0.15s ease;
+    z-index: 2;
 }
 
-.page-jobs .hero-slider__btn:hover {
+/* Previous arrow */
+.page-jobs .hero-slider_slide > a:first-of-type {
+    left: 12px;
+}
+
+.page-jobs .hero-slider_slide > a:first-of-type::before {
+    content: "\276E";
+}
+
+/* Next arrow */
+.page-jobs .hero-slider_slide > a:last-of-type {
+    right: 12px;
+}
+
+.page-jobs .hero-slider_slide > a:last-of-type::before {
+    content: "\276F";
+}
+
+/* Hover and focus */
+.page-jobs .hero-slider_slide > a:hover {
     background-color: var(--color-primary);
-    transform: scale(1.06);
 }
 
-/* Keyboard accessibility */
-.page-jobs .hero-slider__btn:focus-visible {
+.page-jobs .hero-slider_slide > a:focus-visible,
+.page-jobs .hero-slider__dot:focus-visible {
     outline: 3px solid #ffffff;
     outline-offset: 3px;
 }
 
-
-/* Bottom indicator dots */
+/* Slide indicator dots */
 .page-jobs .hero-slider__dots {
     position: absolute;
     bottom: 12px;
     left: 50%;
     transform: translateX(-50%);
+
     display: flex;
     gap: 8px;
     padding: 6px 12px;
+
     background-color: rgba(10, 31, 77, 0.6);
     border-radius: 999px;
-    z-index: 2;
+    z-index: 3;
 }
 
 .page-jobs .hero-slider__dot {
-    width: 10px;
-    height: 10px;
+    display: block;
+    width: 12px;
+    height: 12px;
     border-radius: 50%;
     background-color: rgba(255, 255, 255, 0.45);
-    border: 1px solid var(--color-surface);
-    cursor: pointer;
-    transition: background-color 0.15s ease, transform 0.15s ease;
+    border: 1px solid #ffffff;
 }
 
 .page-jobs .hero-slider__dot:hover {
-    background-color: var(--color-surface);
+    background-color: #ffffff;
 }
 
-/* Highlight active slide dot */
-.page-jobs #hero-s1:checked~.hero-slider__dots label:nth-child(1),
-.page-jobs #hero-s2:checked~.hero-slider__dots label:nth-child(2),
-.page-jobs #hero-s3:checked~.hero-slider__dots label:nth-child(3),
-.page-jobs #hero-s4:checked~.hero-slider__dots label:nth-child(4),
-.page-jobs #hero-s5:checked~.hero-slider__dots label:nth-child(5),
-.page-jobs #hero-s6:checked~.hero-slider__dots label:nth-child(6),
-.page-jobs #hero-s7:checked~.hero-slider__dots label:nth-child(7),
-.page-jobs #hero-s8:checked~.hero-slider__dots label:nth-child(8),
-.page-jobs #hero-s9:checked~.hero-slider__dots label:nth-child(9) {
-    background-color: var(--color-primary);
-    transform: scale(1.25);
+/* Indicate the currently selected slide */
+.page-jobs .hero-slider__dots:not(:has(
+    ~ .hero-slider_slide
+)) {
+    pointer-events: auto;
 }
+
+.page-jobs .hero-slider .hero-slider:not(
+    :has(> .hero-slider_slide:target)
+) .hero-slider__dot[href="#slide-1"],
+.page-jobs .hero-slider .hero-slider:has(
+    > #slide-1:target
+) .hero-slider__dot[href="#slide-1"],
+.page-jobs .hero-slider .hero-slider:has(
+    > #slide-2:target
+) .hero-slider__dot[href="#slide-2"],
+.page-jobs .hero-slider .hero-slider:has(
+    > #slide-3:target
+) .hero-slider__dot[href="#slide-3"],
+.page-jobs .hero-slider .hero-slider:has(
+    > #slide-4:target
+) .hero-slider__dot[href="#slide-4"],
+.page-jobs .hero-slider .hero-slider:has(
+    > #slide-5:target
+) .hero-slider__dot[href="#slide-5"],
+.page-jobs .hero-slider .hero-slider:has(
+    > #slide-6:target
+) .hero-slider__dot[href="#slide-6"],
+.page-jobs .hero-slider .hero-slider:has(
+    > #slide-7:target
+) .hero-slider__dot[href="#slide-7"],
+.page-jobs .hero-slider .hero-slider:has(
+    > #slide-8:target
+) .hero-slider__dot[href="#slide-8"],
+.page-jobs .hero-slider .hero-slider:has(
+    > #slide-9:target
+) .hero-slider__dot[href="#slide-9"] {
+    background-color: var(--color-primary);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .page-jobs .hero-slider_slide > a,
+    .page-jobs .hero-slider__dot {
+        transition: none;
+    }
+}
+
 
 /* ---- C.2 Overview: panels, jump pills and the floated aside ---- */
 /* New block formatting context (flow-root) clears the right-floated scam warning aside */
@@ -1751,7 +1711,7 @@ main {
     padding-bottom: 56px;
 }
 
-.container {
+.apply-page .container {
     max-width: 1280px;
     margin-left: auto;
     margin-right: auto;
@@ -1759,7 +1719,7 @@ main {
     padding-right: clamp(1rem, 5vw, 4rem);
 }
 
-.sr-only {
+.apply-page .sr-only {
     position: absolute;
     width: 1px;
     height: 1px;
@@ -1771,7 +1731,7 @@ main {
 }
 
 /* Skip link for accessibility */
-.skip-link {
+.apply-page .skip-link {
     position: absolute;
     top: -100px;
     left: 16px;
@@ -1784,17 +1744,17 @@ main {
     border-radius: 8px;
 }
 
-.skip-link:focus {
+.apply-page .skip-link:focus {
     top: 12px;
 }
 
 /* 2. HEADER & NAVIGATION */
-.site-header {
+.apply-page .site-header {
     background-color: transparent;
     color: var(--color-nav);
 }
 
-.site-header__inner {
+.apply-page .site-header__inner {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -1804,7 +1764,7 @@ main {
     padding-bottom: 12px;
 }
 
-.site-brand {
+.apply-page .site-brand {
     display: inline-flex;
     align-items: center;
     min-height: 44px;
@@ -1814,12 +1774,12 @@ main {
     font-weight: 700;
 }
 
-.site-brand img {
+.apply-page .site-brand img {
     height: 48px;
     width: auto;
 }
 
-.site-nav ul {
+.apply-page .site-nav ul {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -1829,7 +1789,7 @@ main {
     padding: 0;
 }
 
-.site-nav a {
+.apply-page .site-nav a {
     display: inline-flex;
     align-items: center;
     min-height: 44px;
@@ -1841,42 +1801,42 @@ main {
     transition: color 0.15s, border-color 0.15s;
 }
 
-.site-nav a:hover,
-.site-nav a[aria-current="page"] {
+.apply-page .site-nav a:hover,
+.apply-page .site-nav a[aria-current="page"] {
     color: var(--color-primary);
     border-bottom-color: var(--color-primary);
 }
 
 /* 3. HERO BANNER */
-.hero-banner {
+.apply-page .hero-banner {
     background: linear-gradient(135deg, #0a1f4d 0%, #0b5fff 100%);
     color: #ffffff;
     padding: 48px 0;
     margin-bottom: 24px;
 }
 
-.hero-content h1.hero-title {
+.apply-page .hero-content h1.hero-title {
     font-size: 2.2rem;
     font-weight: 800;
     margin-bottom: 12px;
 }
 
-.highlight-blue {
+.apply-page .highlight-blue {
     color: #60a5fa;
 }
 
-.hero-content p {
+.apply-page .hero-content p {
     font-size: 0.95rem;
     color: #ffffff;
     margin: 0;
 }
 
 /* 4. APPLY PAGE - STEPPER & LAYOUT */
-.main-container {
+.apply-page .main-container {
     margin-top: 12px;
 }
 
-.stepper-bar {
+.apply-page .stepper-bar {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -1887,13 +1847,13 @@ main {
     margin-bottom: 24px;
 }
 
-.step {
+.apply-page .step {
     display: flex;
     align-items: center;
     gap: 8px;
 }
 
-.step__num {
+.apply-page .step__num {
     width: 28px;
     height: 28px;
     border-radius: 50%;
@@ -1906,36 +1866,36 @@ main {
     font-size: 0.85rem;
 }
 
-.step.step--active .step__num {
+.apply-page .step.step--active .step__num {
     background-color: var(--color-primary);
     color: #ffffff;
 }
 
-.step__label {
+.apply-page .step__label {
     font-weight: 600;
     color: var(--color-muted);
     font-size: 0.85rem;
 }
 
-.step.step--active .step__label {
+.apply-page .step.step--active .step__label {
     color: var(--color-primary);
 }
 
-.step-line {
+.apply-page .step-line {
     flex: 1;
     height: 2px;
     background-color: var(--color-border);
     margin: 0 16px;
 }
 
-.content-grid {
+.apply-page .content-grid {
     display: grid;
     grid-template-columns: 1fr 320px;
     gap: 24px;
 }
 
 /* 5. FORM STYLES */
-.form-section {
+.apply-page .form-section {
     background-color: var(--color-surface);
     border: 1px solid var(--color-border);
     border-radius: 12px;
@@ -1943,7 +1903,7 @@ main {
     margin-bottom: 20px;
 }
 
-.section-header {
+.apply-page .section-header {
     width: 100%;
     display: flex;
     align-items: center;
@@ -1954,7 +1914,7 @@ main {
     margin-bottom: 20px;
 }
 
-.section-header__num {
+.apply-page .section-header__num {
     background: var(--color-primary);
     color: #ffffff;
     font-weight: 700;
@@ -1963,48 +1923,48 @@ main {
     font-size: 0.85rem;
 }
 
-.section-header__title {
+.apply-page .section-header__title {
     font-weight: 700;
     color: var(--color-navy);
     font-size: 1rem;
 }
 
-.section-header__desc {
+.apply-page .section-header__desc {
     margin-left: auto;
     font-size: 0.80rem;
     color:#0f172a;
     font-weight: 500;
 }
 
-.form-row {
+.apply-page .form-row {
     display: flex;
     flex-wrap: wrap;
     gap: 16px;
     margin-bottom: 16px;
 }
 
-.form-group {
+.apply-page .form-group {
     display: flex;
     flex-direction: column;
     gap: 6px;
 }
 
-.col-13 {
+.apply-page .col-13 {
     flex: 1 1 calc(33.333% - 11px);
     min-width: 180px;
 }
 
-.col-23 {
+.apply-page .col-23 {
     flex: 2 1 calc(66.666% - 11px);
     min-width: 240px;
 }
 
-.col-12 {
+.apply-page .col-12 {
     flex: 1 1 calc(50% - 8px);
     min-width: 200px;
 }
 
-.col-full {
+.apply-page .col-full {
     flex: 1 1 100%;
 }
 
@@ -2016,7 +1976,7 @@ label,
     color: var(--color-text);
 }
 
-.required {
+.apply-page .required {
     color: #b91c1c;
 }
 
@@ -2043,29 +2003,29 @@ textarea:focus {
     box-shadow: 0 0 0 3px rgba(11, 95, 255, 0.2);
 }
 
-.field-hint {
+.apply-page .field-hint {
     font-size: 0.75rem;
     color: #0f172a;
     font-weight: 500;
 }
 
-.gender-fieldset,
-.skills-fieldset {
+.apply-page .gender-fieldset,
+.apply-page .skills-fieldset {
     border: none;
     padding: 0;
     margin: 0;
 }
 
-.radio-group,
-.checkbox-grid {
+.apply-page .radio-group,
+.apply-page .checkbox-grid {
     display: flex;
     flex-wrap: wrap;
     gap: 16px;
     padding-top: 6px;
 }
 
-.radio-item,
-.checkbox-item {
+.apply-page .radio-item,
+.apply-page .checkbox-item {
     display: flex;
     align-items: center;
     gap: 6px;
@@ -2073,13 +2033,13 @@ textarea:focus {
     cursor: pointer;
 }
 
-.form-actions {
+.apply-page .form-actions {
     display: flex;
     justify-content: flex-end;
     gap: 12px;
 }
 
-.btn {
+.apply-page .btn {
     display: inline-flex;
     align-items: center;
     gap: 6px;
@@ -2091,86 +2051,86 @@ textarea:focus {
     border: 2px solid transparent;
 }
 
-.btn--primary {
+.apply-page .btn--primary {
     background-color: var(--color-primary);
     color: var(--color-surface);
 }
 
-.btn--primary:hover {
+.apply-page .btn--primary:hover {
     background-color: var(--color-primary-dark);
 }
 
-.btn--secondary {
+.apply-page .btn--secondary {
     background-color: #ffffff;
     color: var(--color-text);
     border-color: var(--color-border);
 }
 
-.btn--secondary:hover {
+.apply-page .btn--secondary:hover {
     background-color: var(--color-block);
 }
 
 /* 6. SIDEBAR CARDS & TIMELINE */
-.sidebar-column {
+.apply-page .sidebar-column {
     display: flex;
     flex-direction: column;
     gap: 16px;
 }
 
-.card {
+.apply-page .card {
     background: var(--color-surface);
     border: 1px solid var(--color-border);
     border-radius: 12px;
     padding: 16px;
 }
 
-.card__header {
+.apply-page .card__header {
     display: flex;
     align-items: center;
     gap: 8px;
     margin-bottom: 12px;
 }
 
-.card__header h2 {
+.apply-page .card__header h2 {
     font-size: 0.95rem;
     font-weight: 700;
     color: var(--color-navy);
     margin: 0;
 }
 
-.card--tips {
+.apply-page .card--tips {
     background-color: #fffde7;
     border-color: #facc15;
     color: #1e293b;
 }
 
-.card--security {
+.apply-page .card--security {
     background-color: #f0fdf4;
     border-color: #bbf7d0;
 }
 
-.card--help {
+.apply-page .card--help {
     background-color: #eff6ff;
     border-color: #bfdbfe;
 }
 
-.card--tips ul {
+.apply-page .card--tips ul {
     padding-left: 18px;
     font-size: 0.8rem;
     margin: 0;
 }
 
-.card--tips li {
+.apply-page .card--tips li {
     margin-bottom: 6px;
 }
 
-.card--security p,
-.card--help p {
+.apply-page .card--security p,
+.apply-page .card--help p {
     font-size: 0.8rem;
     margin: 0;
 }
 
-.email-link {
+.apply-page .email-link {
     display: inline-block;
     margin-top: 8px;
     font-weight: 700;
@@ -2178,14 +2138,14 @@ textarea:focus {
     text-decoration: none;
 }
 
-.timeline-list {
+.apply-page .timeline-list {
     list-style: none;
     position: relative;
     padding-left: 20px;
     margin: 0;
 }
 
-.timeline-list::before {
+.apply-page .timeline-list::before {
     content: "";
     position: absolute;
     left: 13px;
@@ -2195,21 +2155,21 @@ textarea:focus {
     background-color: var(--color-border);
 }
 
-.timeline-item {
+.apply-page .timeline-item {
     position: relative;
     display: flex;
     gap: 12px;
     margin-bottom: 16px;
 }
 
-.timeline-item--highlight {
+.apply-page .timeline-item--highlight {
     background: #e6f7ed;
     padding: 8px;
     border-radius: 8px;
     border-left: 4px solid #10b981;
 }
 
-.timeline-badge {
+.apply-page .timeline-badge {
     position: relative;
     z-index: 1;
     width: 28px;
@@ -2223,40 +2183,40 @@ textarea:focus {
     flex-shrink: 0;
 }
 
-.bg-blue {
+.apply-page .bg-blue {
     background-color: #1d4ed8;
 }
 
-.bg-purple {
+.apply-page .bg-purple {
     background-color: #7e22ce;
 }
 
-.bg-teal {
+.apply-page .bg-teal {
     background-color: #0f766e;
 }
 
-.bg-yellow {
+.apply-page .bg-yellow {
     background-color: #a16207;
 }
 
-.bg-orange {
+.apply-page .bg-orange {
     background-color: #c2410c;
 }
 
-.timeline-content .date {
+.apply-page .timeline-content .date {
     font-size: 0.72rem;
     font-weight: 700;
     color: #0f172a;
 }
 
-.timeline-content h3 {
+.apply-page .timeline-content h3 {
     font-size: 0.82rem;
     font-weight: 700;
     color: var(--color-navy);
     margin: 0;
 }
 
-.timeline-content p {
+.apply-page .timeline-content p {
     font-size: 0.75rem;
     color: var(--color-muted);
     margin: 0;
@@ -3028,11 +2988,6 @@ textarea:focus {
     outline-offset: 2px;
 }
 
-.page-jobs .hero-slider:has(.hero-slider__radio:focus-visible) {
-    outline: 3px solid var(--color-primary);
-    outline-offset: 2px;
-}
-
 .site-footer :focus-visible,
 .page-jobs .how-to :focus-visible,
 .page-jobs .role-modal__footer :focus-visible {
@@ -3051,8 +3006,6 @@ textarea:focus {
     .site-nav a,
     .btn,
     .page-jobs .pill,
-    .page-jobs .hero-slider__track,
-    .page-jobs .hero-slider__btn,
     .page-jobs .hero-slider__dot,
     .page-jobs .see-more>summary::after {
         transition: none;
