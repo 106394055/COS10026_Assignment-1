@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="no-js">
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,7 +14,7 @@
 
 <body class="page-jobs">
   <!-- Header -->
-  <a class="skip-link" href="index.html">Skip to main content</a>
+  <a class="skip-link" href="#main">Skip to main content</a>
   <header class="site-header">
     <div class="container site-header__inner">
       <a class="site-brand" href="index.html">
@@ -24,7 +24,7 @@
       <nav class="site-nav" aria-label="Main">
         <ul>
           <li><a href="index.html">Home</a></li>
-          <li><a href="jobs.html" aria-current="page">Jobs</a></li>
+          <li><a href="job.html" aria-current="page">Jobs</a></li>
           <li><a href="apply.html">Apply</a></li>
           <li><a href="about.html">About</a></li>
         </ul>
@@ -44,106 +44,78 @@
         </div>
         <div class="hero__media">
           <div class="hero-slider" role="region" aria-label="VinFast gallery slideshow">
-            <!-- State radios (1 to 9) -->
-            <input class="hero-slider__radio" type="radio" name="hero-slide" id="hero-s1" checked aria-label="Slide 1 of 9">
-            <input class="hero-slider__radio" type="radio" name="hero-slide" id="hero-s2" aria-label="Slide 2 of 9">
-            <input class="hero-slider__radio" type="radio" name="hero-slide" id="hero-s3" aria-label="Slide 3 of 9">
-            <input class="hero-slider__radio" type="radio" name="hero-slide" id="hero-s4" aria-label="Slide 4 of 9">
-            <input class="hero-slider__radio" type="radio" name="hero-slide" id="hero-s5" aria-label="Slide 5 of 9">
-            <input class="hero-slider__radio" type="radio" name="hero-slide" id="hero-s6" aria-label="Slide 6 of 9">
-            <input class="hero-slider__radio" type="radio" name="hero-slide" id="hero-s7" aria-label="Slide 7 of 9">
-            <input class="hero-slider__radio" type="radio" name="hero-slide" id="hero-s8" aria-label="Slide 8 of 9">
-            <input class="hero-slider__radio" type="radio" name="hero-slide" id="hero-s9" aria-label="Slide 9 of 9">
+                <div class="hero-slider">
+                  <div class="hero-slider_slide" id="slide-1">
+                    <img src="images/Jobs/pic1.jpg" alt="Slide 1">
+                    <a href="#slide-9" aria-label="Previous slide"></a>
+                    <a href="#slide-2" aria-label="Next slide"></a>
+                  </div>
 
-            <!-- Slide track -->
-            <div class="hero-slider__viewport">
-              <ul class="hero-slider__track">
-                <li class="hero-slider__slide">
-                  <img src="images/Jobs/pic1.jpg" width="604" height="340" alt="Rows of orange and white VinFast electric cars parked in front of a VinFast-branded ship">
-                </li>
-                <li class="hero-slider__slide">
-                  <img src="images/Jobs/pic2.jpg" width="604" height="340" alt="VinFast electric SUVs displayed inside a modern digital retail showroom">
-                </li>
-                <li class="hero-slider__slide">
-                  <img src="images/Jobs/pic3.jpg" width="604" height="340" alt="Engineers collaborating on the VinFast online vehicle configurator interface">
-                </li>
-                <li class="hero-slider__slide">
-                  <img src="images/Jobs/pic4.jpg" width="604" height="340" alt="Automated robotic assembly line at the VinFast manufacturing complex">
-                </li>
-                <li class="hero-slider__slide">
-                  <img src="images/Jobs/pic5.jpg" width="604" height="340" alt="Customer using a tablet to customise a VinFast electric vehicle colour and trim">
-                </li>
-                <li class="hero-slider__slide">
-                  <img src="images/Jobs/pic6.jpg" width="604" height="340" alt="Data analysts reviewing live e-commerce performance dashboards in Ho Chi Minh City">
-                </li>
-                <li class="hero-slider__slide">
-                  <img src="images/Jobs/pic7.jpg" width="604" height="340" alt="VinFast electric vehicles charging at a green mobility station">
-                </li>
-                <li class="hero-slider__slide">
-                  <img src="images/Jobs/pic8.jpg" width="604" height="340" alt="VinFast digital merchandising team auditing vehicle accessory catalogue listings">
-                </li>
-                <li class="hero-slider__slide">
-                  <img src="images/Jobs/pic9.jpg" width="604" height="340" alt="VinFast customer experience specialists supporting online vehicle orders">
-                </li>
-              </ul>
-            </div>
+                  <div class="hero-slider_slide" id="slide-2">
+                    <img src="images/Jobs/pic2.jpg" alt="Slide 2">
+                    <a href="#slide-1" aria-label="Previous slide"></a>
+                    <a href="#slide-3" aria-label="Next slide"></a>
+                  </div>
 
-            <!-- Previous / Next arrow pairs (wraps 1 <-> 9) -->
-            <div class="hero-slider__arrows">
-              <div class="hero-slider__nav hero-slider__nav--1">
-                <label class="hero-slider__btn" for="hero-s9" title="Previous slide (9 of 9)" aria-label="Previous slide">&#10094;</label>
-                <label class="hero-slider__btn" for="hero-s2" title="Next slide (2 of 9)" aria-label="Next slide">&#10095;</label>
-              </div>
-              <div class="hero-slider__nav hero-slider__nav--2">
-                <label class="hero-slider__btn" for="hero-s1" title="Previous slide (1 of 9)" aria-label="Previous slide">&#10094;</label>
-                <label class="hero-slider__btn" for="hero-s3" title="Next slide (3 of 9)" aria-label="Next slide">&#10095;</label>
-              </div>
-              <div class="hero-slider__nav hero-slider__nav--3">
-                <label class="hero-slider__btn" for="hero-s2" title="Previous slide (2 of 9)" aria-label="Previous slide">&#10094;</label>
-                <label class="hero-slider__btn" for="hero-s4" title="Next slide (4 of 9)" aria-label="Next slide">&#10095;</label>
-              </div>
-              <div class="hero-slider__nav hero-slider__nav--4">
-                <label class="hero-slider__btn" for="hero-s3" title="Previous slide (3 of 9)" aria-label="Previous slide">&#10094;</label>
-                <label class="hero-slider__btn" for="hero-s5" title="Next slide (5 of 9)" aria-label="Next slide">&#10095;</label>
-              </div>
-              <div class="hero-slider__nav hero-slider__nav--5">
-                <label class="hero-slider__btn" for="hero-s4" title="Previous slide (4 of 9)" aria-label="Previous slide">&#10094;</label>
-                <label class="hero-slider__btn" for="hero-s6" title="Next slide (6 of 9)" aria-label="Next slide">&#10095;</label>
-              </div>
-              <div class="hero-slider__nav hero-slider__nav--6">
-                <label class="hero-slider__btn" for="hero-s5" title="Previous slide (5 of 9)" aria-label="Previous slide">&#10094;</label>
-                <label class="hero-slider__btn" for="hero-s7" title="Next slide (7 of 9)" aria-label="Next slide">&#10095;</label>
-              </div>
-              <div class="hero-slider__nav hero-slider__nav--7">
-                <label class="hero-slider__btn" for="hero-s6" title="Previous slide (6 of 9)" aria-label="Previous slide">&#10094;</label>
-                <label class="hero-slider__btn" for="hero-s8" title="Next slide (8 of 9)" aria-label="Next slide">&#10095;</label>
-              </div>
-              <div class="hero-slider__nav hero-slider__nav--8">
-                <label class="hero-slider__btn" for="hero-s7" title="Previous slide (7 of 9)" aria-label="Previous slide">&#10094;</label>
-                <label class="hero-slider__btn" for="hero-s9" title="Next slide (9 of 9)" aria-label="Next slide">&#10095;</label>
-              </div>
-              <div class="hero-slider__nav hero-slider__nav--9">
-                <label class="hero-slider__btn" for="hero-s8" title="Previous slide (8 of 9)" aria-label="Previous slide">&#10094;</label>
-                <label class="hero-slider__btn" for="hero-s1" title="Next slide (1 of 9)" aria-label="Next slide">&#10095;</label>
-              </div>
-            </div>
+                  <div class="hero-slider_slide" id="slide-3"> 
+                    <img src="images/Jobs/pic3.jpg" alt="Slide 3">
+                    <a href="#slide-2" aria-label="Previous slide"></a>
+                    <a href="#slide-4" aria-label="Next slide"></a>
+                  </div>
 
-            <!-- Slide indicator dots (1 to 9) -->
-            <div class="hero-slider__dots">
-              <label class="hero-slider__dot" for="hero-s1" aria-label="Go to slide 1"></label>
-              <label class="hero-slider__dot" for="hero-s2" aria-label="Go to slide 2"></label>
-              <label class="hero-slider__dot" for="hero-s3" aria-label="Go to slide 3"></label>
-              <label class="hero-slider__dot" for="hero-s4" aria-label="Go to slide 4"></label>
-              <label class="hero-slider__dot" for="hero-s5" aria-label="Go to slide 5"></label>
-              <label class="hero-slider__dot" for="hero-s6" aria-label="Go to slide 6"></label>
-              <label class="hero-slider__dot" for="hero-s7" aria-label="Go to slide 7"></label>
-              <label class="hero-slider__dot" for="hero-s8" aria-label="Go to slide 8"></label>
-              <label class="hero-slider__dot" for="hero-s9" aria-label="Go to slide 9"></label>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+                  <div class="hero-slider_slide" id="slide-4"> 
+                    <img src="images/Jobs/pic4.jpg" alt="Slide 4">
+                    <a href="#slide-3" aria-label="Previous slide"></a>
+                    <a href="#slide-5" aria-label="Next slide"></a>
+                  </div>
+
+                  <div class="hero-slider_slide" id="slide-5"> 
+                    <img src="images/Jobs/pic5.jpg" alt="Slide 5">
+                    <a href="#slide-4" aria-label="Previous slide"></a>
+                    <a href="#slide-6" aria-label="Next slide"></a>
+                  </div>
+
+                  <div class="hero-slider_slide" id="slide-6"> 
+                    <img src="images/Jobs/pic6.jpg" alt="Slide 6">
+                    <a href="#slide-5" aria-label="Previous slide"></a>
+                    <a href="#slide-7" aria-label="Next slide"></a>
+                  </div>
+
+                  <div class="hero-slider_slide" id="slide-7"> 
+                    <img src="images/Jobs/pic7.jpg" alt="Slide 7">
+                    <a href="#slide-6" aria-label="Previous slide"></a>
+                    <a href="#slide-8" aria-label="Next slide"></a>
+                  </div>
+
+                  <div class="hero-slider_slide" id="slide-8"> 
+                    <img src="images/Jobs/pic8.jpg" alt="Slide 8">
+                    <a href="#slide-7" aria-label="Previous slide"></a>
+                    <a href="#slide-9" aria-label="Next slide"></a>
+                  </div>
+
+                  <div class="hero-slider_slide" id="slide-9"> 
+                    <img src="images/Jobs/pic9.jpg" alt="Slide 9">
+                    <a href="#slide-8" aria-label="Previous slide"></a>
+                    <a href="#slide-1" aria-label="Next slide"></a>
+                  </div>
+
+                  <!-- CSS-only slide indicators -->
+                  <nav class="hero-slider__dots" aria-label="Gallery slide navigation">
+                      <a class="hero-slider__dot" href="#slide-1" aria-label="Go to slide 1"></a>
+                      <a class="hero-slider__dot" href="#slide-2" aria-label="Go to slide 2"></a>
+                      <a class="hero-slider__dot" href="#slide-3" aria-label="Go to slide 3"></a>
+                      <a class="hero-slider__dot" href="#slide-4" aria-label="Go to slide 4"></a>
+                      <a class="hero-slider__dot" href="#slide-5" aria-label="Go to slide 5"></a>
+                      <a class="hero-slider__dot" href="#slide-6" aria-label="Go to slide 6"></a>
+                      <a class="hero-slider__dot" href="#slide-7" aria-label="Go to slide 7"></a>
+                      <a class="hero-slider__dot" href="#slide-8" aria-label="Go to slide 8"></a>
+                      <a class="hero-slider__dot" href="#slide-9" aria-label="Go to slide 9"></a>
+                  </nav>
+                                </div> <!-- Inner hero-slider -->
+              </div> <!-- Outer hero-slider -->
+            </div> <!-- hero__media -->
+          </div> <!-- hero__grid -->
+        </section>
 
     <!-- 2. Breadcrumb -->
 
@@ -728,7 +700,7 @@
       <p class="site-bot__title">VinFast Career Assistant</p>
       <p class="site-bot__text">Need help applying? Quote a 5-character reference (VF001-VF004) on the Apply page before <time datetime="2026-10-09">09 October 2026</time>.</p>
       <ul class="site-bot__links">
-        <li><a href="jobs.html">Browse open roles</a></li>
+        <li><a href="job.html">Browse open roles</a></li>
         <li><a href="apply.html">Go to application form</a></li>
         <li><a href="mailto:info@vinfast-digital-retail.example">Email recruitment team</a></li>
       </ul>
@@ -755,4 +727,5 @@
     </div>
   </div>
 </footer>
+</body>
 </html>
