@@ -94,9 +94,11 @@ Candidates can explore the About page whenever they want to learn more about the
 4. Navigate through the website using the shared navigation menu.
 5. Test the layout at both desktop and mobile screen sizes.
 
-## Live Website
+## Project Links
 
-GitHub Pages: https://106394055.github.io/COS10026_Assignment-1/index.html
+- **Live Website:** [VinFast Careers Website](https://106394055.github.io/COS10026_Assignment-1/)
+- **GitHub Repository:** [COS10026 Assignment 1](https://github.com/106394055/COS10026_Assignment-1)
+- **Jira Project Board:** [View Project Board](https://dovukhanhquynh.atlassian.net/jira/software/projects/SCRUM/boards/)
 
 ## Project Status
 
