@@ -2380,41 +2380,56 @@ textarea:focus {
 
 /* 9. MEDIA QUERIES (MOBILE RESPONSIVE) */
 @media (max-width: 900px) {
-    .content-grid {
+
+    /* Stack form and sidebar vertically */
+    .apply-page .content-grid {
         grid-template-columns: 1fr;
     }
 
-    .stepper-bar {
+    /* Allow stepper to scroll horizontally */
+    .apply-page .stepper-bar {
         overflow-x: auto;
     }
 
+    /* Footer layout for tablet */
     .site-footer__inner {
         grid-template-columns: 1fr;
-        grid-template-areas: "brand" "ack" "bottom";
+        grid-template-areas:
+            "brand"
+            "ack"
+            "bottom";
     }
+
 }
 
 @media (max-width: 600px) {
-    .site-header__inner {
+
+    /* Mobile header */
+    .apply-page .site-header__inner {
         flex-direction: column;
         align-items: flex-start;
     }
 
-    .form-row {
+    /* Stack form fields */
+    .apply-page .form-row {
         flex-direction: column;
     }
 
-    .col-13,
-    .col-23,
-    .col-12 {
+    /* Full-width form fields */
+    .apply-page .col-13,
+    .apply-page .col-23,
+    .apply-page .col-12 {
         flex: 1 1 100%;
+        min-width: 0;
     }
 
-    .radio-group {
+    /* Stack radio buttons */
+    .apply-page .radio-group {
         flex-direction: column;
         align-items: flex-start;
     }
 
+    /* Floating chatbot */
     .site-bot {
         right: 16px;
         bottom: 16px;
@@ -2423,6 +2438,7 @@ textarea:focus {
     .site-bot__badge {
         display: none;
     }
+
 }
 
 /* ==========================================
