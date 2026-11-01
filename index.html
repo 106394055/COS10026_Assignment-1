@@ -3,11 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Explore careers and opportunities at VinFast.">
+  <meta name="author" content="Nguyen Nhat Thanh">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
-  <meta name="description" content="Explore careers and opportunities at VinFast.">
-  <meta name="author" content="Nguyen Nhat Thanh">
   <title>VinFast Home page</title>
   <link rel="stylesheet" href="css/style.css">
   <link rel="icon" href="images/Home/Vinfast_logo.png" type="image/png">
@@ -44,18 +45,6 @@
       <img src="images/Home/VinFast-background.png" alt="VinFast Background" class="hero-background">
     </section>
 
-    <!-- Search Section -->
-    <section class="search-section">
-      <div class="search-box">
-        <input 
-          type="text" 
-          class="search-input" 
-          placeholder="e.g: VF001, VF002,..."
-          aria-label="Search for job reference codes">
-        <button class="search-button">Search</button>
-      </div>
-    </section>
-
     <!-- Info / Stats Section -->
     <section class="stats-section">
       <h2 class="stats-title">Drive the Future with Us</h2>
@@ -64,39 +53,54 @@
         <!-- Card 1 -->
         <div class="stat-card">
           <img src="images/Home/audience.png" alt="Audience Icon" class="stat-icon">
-          <h3 class="stat-number">1000+</h3>
+          <h3 class="stat-number">#57</h3>
           <p class="stat-description">
-            Team Members <br>
-            Growing together
+            <a href="https://time.com/7377459/asia-pacific-best-companies-2026/">TIME's Asia-Pacific’s best companies of 2026
+            </a>
           </p>
         </div>
 
         <!-- Card 2 -->
         <div class="stat-card">
           <img src="images/Home/world.png" alt="World Icon" class="stat-icon">
-          <h3 class="stat-number">50+</h3>
+          <h3 class="stat-number">#3 ASEAN</h3>
           <p class="stat-description">
-            Global Markets <br>
-            Expanding worldwide
+            <a href="https://www.pwc.com/my/en/assets/publications/2026/pwc-my-asean-6-automotive-6th-market-snapshot.pdf">Present in 16 countries</a>
           </p>
         </div>
 
         <!-- Card 3 -->
         <div class="stat-card">
-          <img src="images/Home/electric_car.png" alt="Electric Car Icon" class="stat-icon">
-          <h3 class="stat-number">100%</h3>
+          <img src="images/Home/sales.png" alt="Electric Car Icon" class="stat-icon">
+          <h3 class="stat-number">Dozens</h3>
           <p class="stat-description">
-            Electric Future<br>
-            Clean energy, green planet
+            <a href="https://vinfastauto.us/investor-relations/news/vinfast-honored-for-investor-relations-excellence-at-the-asian-excellence">International awards and titles in 2025-2026</a>
           </p>
         </div>
+      </div>
+    </section>
+
+    <!-- Search Section -->
+    <section class="search-section">
+      <div class="search-box">
+        <select class="search-input" aria-label="Select a job reference code">
+            <option value="">Select Job Code...</option>
+            <option value="#VF001">VF001</option>
+            <option value="#VF002">VF002</option>
+            <option value="#VF003">VF003</option>
+            <option value="#VF004">VF004</option>
+        </select>
+
+        <button class="search-button">Search</button>
       </div>
     </section>
 
     <!-- Jobs Section -->
     <section class="jobs-section">
       <!-- JOB 1 TABLE -->
-      <table class="job-table">
+      <table class="job-table" id="VF001">
+        <caption>(VF001) Job Details for E-Commerce UX/UI Front-End Developer</caption>
+
         <tbody>
           <tr class="job-header-row">
             <td colspan="3">
@@ -135,14 +139,16 @@
       </table>
 
       <!-- JOB 2 TABLE -->
-      <table class="job-table">
+      <table class="job-table" id="VF002">
+        <caption>(VF002) Job Details for Digital Merchandising & Catalogue Specialist </caption>
+
         <tbody>
           <tr class="job-header-row">
             <td colspan="3">
               <div class="job-header-content">
                 <div class="job-title-group">
                   <span class="badge">VF002</span>
-                  <span class="job-title">Digital Merchandising &amp; Catalogue Specialist</span>
+                  <span class="job-title">Digital Merchandising & Catalogue Specialist</span>
                 </div>
                 <a href="job.html" class="btn-apply">EXPLORE NOW</a>
               </div>
@@ -174,7 +180,9 @@
       </table>
 
       <!-- JOB 3 TABLE -->
-      <table class="job-table">
+      <table class="job-table" id="VF003">
+        <caption>(VF003) Job Details for E-Commerce Data Analyst</caption>
+
         <tbody>
           <tr class="job-header-row">
             <td colspan="3">
@@ -213,7 +221,9 @@
       </table>
 
       <!-- JOB 4 TABLE -->
-      <table class="job-table">
+      <table class="job-table" id="VF004">
+        <caption>(VF004) Job Details for Customer Experience CRM Manager</caption>
+
         <tbody>
           <tr class="job-header-row">
             <td colspan="3">

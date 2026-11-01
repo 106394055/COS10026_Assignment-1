@@ -621,22 +621,22 @@ dd {
 .page-home .stats-section {
     width: 100%;
     text-align: center;
-    padding: 30px 20px 60px 20px;
+    padding: 30px 20px 40px 20px;
 }
 
 .page-home .stats-title {
     color: #0d2c54;
     font-size: 35px;
     font-weight: 700;
-    margin-bottom: 30px;
+    margin-bottom: 40px;
 }
 
 .page-home .stats-grid {
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    gap: 80px;
-    max-width: 1000px;
+    gap: 50px;
+    max-width: 910px;
     margin: 0 auto;
 }
 
@@ -648,22 +648,22 @@ dd {
 }
 
 .page-home .stat-icon {
-    width: 20%;
+    width: 60px;
     object-fit: contain;
-    margin-bottom: 12px;
+    margin-bottom: 13px;
 }
 
 .page-home .stat-number {
     color: #0066ff;
     font-size: 30px;
     font-weight: 700;
-    margin-bottom: 8px;
+    margin-bottom: 10px;
 }
 
 .page-home .stat-description {
     color: #111111;
     font-size: 17px;
-    line-height: 1.35;
+    line-height: 1.4;
 }
 
 /* 4. JOBS SECTION */
@@ -681,6 +681,18 @@ dd {
     border-collapse: separate;
     border-spacing: 0;
     margin-top: 10px;
+}
+
+.page-home .job-table caption {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
 
 /* Header Row */
@@ -2385,41 +2397,56 @@ textarea:focus {
 
 /* 9. MEDIA QUERIES (MOBILE RESPONSIVE) */
 @media (max-width: 900px) {
-    .content-grid {
+
+    /* Stack form and sidebar vertically */
+    .apply-page .content-grid {
         grid-template-columns: 1fr;
     }
 
-    .stepper-bar {
+    /* Allow stepper to scroll horizontally */
+    .apply-page .stepper-bar {
         overflow-x: auto;
     }
 
+    /* Footer layout for tablet */
     .site-footer__inner {
         grid-template-columns: 1fr;
-        grid-template-areas: "brand" "ack" "bottom";
+        grid-template-areas:
+            "brand"
+            "ack"
+            "bottom";
     }
+
 }
 
 @media (max-width: 600px) {
-    .site-header__inner {
+
+    /* Mobile header */
+    .apply-page .site-header__inner {
         flex-direction: column;
         align-items: flex-start;
     }
 
-    .form-row {
+    /* Stack form fields */
+    .apply-page .form-row {
         flex-direction: column;
     }
 
-    .col-13,
-    .col-23,
-    .col-12 {
+    /* Full-width form fields */
+    .apply-page .col-13,
+    .apply-page .col-23,
+    .apply-page .col-12 {
         flex: 1 1 100%;
+        min-width: 0;
     }
 
-    .radio-group {
+    /* Stack radio buttons */
+    .apply-page .radio-group {
         flex-direction: column;
         align-items: flex-start;
     }
 
+    /* Floating chatbot */
     .site-bot {
         right: 16px;
         bottom: 16px;
@@ -2428,6 +2455,7 @@ textarea:focus {
     .site-bot__badge {
         display: none;
     }
+
 }
 
 /* ==========================================
