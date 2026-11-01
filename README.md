@@ -1,5 +1,9 @@
 # COS10026 Assignment 1 – VinFast Careers Website
 
+**Team Name:** HCPS  
+**Unit:** COS10026 – Web Technology  
+**Project:** Applied Web Project – Part 1
+
 ## Project Overview
 
 This project is a group assignment for **COS10026 – Computing Technology Inquiry Project / Web Technology**. The team is developing a responsive careers website inspired by VinFast.
@@ -102,9 +106,13 @@ Candidates can explore the About page whenever they want to learn more about the
 
 ## Project Status
 
-The project is being developed collaboratively. Each team member is responsible for their assigned page, while shared styling, navigation, integration and testing require coordination across the team.
+The VinFast Careers Website has been developed as a collaborative
+web technology project. The four main pages have been integrated
+to provide a consistent candidate journey across the website.
 
-Before submission, the team will review the website against the assignment requirements and marking rubric.
+The project includes front-end development, shared styling,
+responsive layouts, form validation, accessibility improvements,
+and collaborative project management using GitHub and Jira.
 
 ---
 
